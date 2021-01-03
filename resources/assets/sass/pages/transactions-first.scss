@@ -1,0 +1,206 @@
+.transactions-panel {
+  $font-family: "SF UI Display", sans-serif;
+  padding: 0;
+  border: 0;
+
+  h2.panel-title {
+    margin: 50px 0 37px 0;
+    padding: 0;
+    font-family: $font-family;
+    font-weight: 300;
+    font-size: 30px;
+    color: #000;
+    text-align: left;
+  }
+  
+  .flex-wrap {
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flex;
+    display: -o-inline-flex;
+    display: inline-flex;
+    .label-count {
+      color: #fff;
+      // background-color: #47bf60;
+      border-radius: 3px;
+      font-family: $font-family;
+      font-weight: 400;
+      font-size: 16px;
+
+      width: 110px;
+      line-height: 20px;
+      padding: 4px 6px;
+      margin-bottom: 10px;
+      &-wrapper {
+        width: 131px;
+        vertical-align: top;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-right: 30px;
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 16px;
+        color: #000;
+      }
+    }
+  }
+
+  .form-control {
+    border: 1px solid #e8e8e8;
+  }
+  .select2-container {
+    font-family: $font-family;
+    font-size: 16.14px;
+    font-weight: 400;
+    color: #616161;
+  }
+  .select2-container .select2-selection--single {
+    border: 1px solid #e8e8e8;
+  }
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #616161;
+  }
+  #toolbar .form-inline .form-group .form-control[name=date_from],
+  #toolbar .form-inline .form-group .form-control[name=date_to] {
+    font-family: $font-family;
+    font-size: 16.14px;
+    font-weight: 400;
+    color: #616161;
+  }
+  .input-group.date .input-group-addon span {
+    width: 16px;
+    height: 17px;
+  }
+  .input-group-addon {
+    background-color: #e0e0e0;
+    border: 0;
+  }
+  .date-icon {
+    background-image: url('/images/date-calendar/ic-date-a.png');
+    background-size: cover;
+    display: block;
+    width: 16px;
+    height: 17px;
+    &:hover {
+      background-image: url('/images/date-calendar/ic-date-p.png');
+    }
+  }
+  #toolbar .form-inline .form-group .form-control {
+    font-family: $font-family;
+    font-size: 16.14px;
+    font-weight: 400;
+    color: #616161;
+  }
+
+
+  
+  .fixed-table-container thead th .th-inner {
+    background-color: #eeeeee;
+    font-family: "SF UI Display", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #7a7a7a;
+  }
+  .fixed-table-container .no-records-found {
+    background-color: #fff;
+  }
+
+  tbody {
+    background-color: #fff;
+  }
+  tbody tr td {
+    font-family: "SF UI Display", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+  }
+  tbody tr td a {
+    color: #000;
+    text-align: left;
+  }
+
+  tbody tr td .fa-2x {
+    font-size: 0;
+    background-image: url('/images/tab-icons/ic-close.png');
+    background-size: cover;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+  }
+  tbody tr td .fa-cogs {
+    background-image: url('/images/tab-icons/_Very-Basic-Hand-Cursor-icon.png');
+  }
+  tbody tr td .icon-button {
+    background-image: url('/images/tab-option/ic-l-t1p.png');
+    background-size: cover;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+  }
+  tbody tr td .icons8-edit {
+    font-size: 0;
+  }
+  
+
+
+  .two-column-table {
+    width: 100%;
+    td.name {
+      text-align: left;
+    }
+    td.value {
+      text-align: right;
+    }
+  }
+
+  .actions_column {
+    min-width: 0;
+    max-width: 100px;
+    width: auto;
+  }
+
+  .transaction-locked-wrapper {
+    display: inline-block;
+
+  }
+
+  .panel-info-statuses-wrapper {
+    @media (max-width: 991px) {
+      margin-top: 30px;
+    }
+  }
+
+  .panel-info-statuses {
+    padding-left: 30px;
+    @media (max-width: 991px) {
+      padding-left: 10px;
+    }
+    .form-group {
+      margin-bottom: 0;
+    }
+    label[for=status] {
+      display: inline-block;
+    }
+    .select2 {
+      width: 100%;
+    }
+    .warning-message {
+      font-size: 14px;
+    }
+    .alert {
+      padding: 15px 10px;
+    }
+  }
+  .button {
+    font-size: 18px;
+  }
+}
+
+.additional-user-info {
+  font-size: 16px;
+}

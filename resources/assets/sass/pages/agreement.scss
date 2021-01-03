@@ -1,0 +1,47 @@
+.convention {
+    .nav-tabs {
+        border: none;
+        background-color: #2a2a2f;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        text-transform: uppercase;
+        
+        li  {
+            
+            padding: 7px 10px;
+           a {
+            color: #786f89;
+            border-radius: 6px;
+            background-color: #46464c;
+                &:hover {
+                border-color: #46464c;
+            }
+        } 
+        &.active {
+            a {
+            color: #fff;
+            background-color: #2a2a2f;
+            border-color: #2a2a2f;
+            
+            }
+        }
+    }
+}
+
+.button {
+    padding: 10px 35px;
+    }
+}
+
+.dark {
+    .convention {
+        background-color: #1f1139;
+        color: #fff;
+        .button {
+            background-color: #8e24aa;
+            &:hover {
+                background-color: #b934d6;
+            }
+        }
+    }
+}

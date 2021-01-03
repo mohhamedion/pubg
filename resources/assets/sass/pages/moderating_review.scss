@@ -1,0 +1,90 @@
+.task-review-app-title {
+  margin-bottom: 20px;
+  color: #60666a;
+  transition: color .3s ease-in-out;
+  position: relative;
+  display: inline-block;
+  &.active {
+    color: #35414f;
+  }
+  &:hover {
+    color: #35414f;
+    cursor: pointer;
+  }
+  .badge {
+    top: -5px;
+    right: -25px;
+    padding: 4px 7px;
+  }
+}
+
+.task-review {
+  width: 23%;
+  height: 520px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  &_title {
+    height: 30px;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    color: #353535;
+  }
+  &_image {
+    height: 380px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  &_user {
+    padding: 12px;
+    height: 40px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    font-size: 16px;
+  }
+  &_moderate {
+    padding: 16px;
+    display: flex;
+    justify-content: space-around;
+  }
+  @media (max-width: 1280px) {
+    width: 47%;
+  }
+  @media (max-width: 768px) {
+    &_moderate {
+      padding: 16px 6px;
+      button.button {
+        font-size: 12px;
+        padding: 10px;
+      }
+    }
+  }
+  @media (max-width: 540px) {
+    width: 100%;
+    &_moderate {
+      padding: 10px;
+    }
+  }
+  &-wrap {
+    .title-line {
+      a {
+        font-size: 16px;
+        margin-left: 30px;
+      }
+    }
+  }
+}
+
+.task-review-items {
+  display: none;
+  .loader {
+    margin: 10px auto;
+  }
+}

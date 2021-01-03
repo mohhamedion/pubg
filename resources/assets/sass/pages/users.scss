@@ -1,0 +1,229 @@
+.user-panel {
+  padding: 25px 20px;
+  .form-group {
+    font-size: 16px;
+    label {
+      color: #8f8f8f;
+      margin-bottom: 10px;
+      &.switch {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .two-column-table {
+    @media (min-width: 991px) and (max-width: 1440px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.actions_column {
+  &.actions_user {
+    min-width: 0;
+    max-width: 110px;
+    width: auto;
+  }
+}
+
+#toolbar {
+  .button {
+    font-size: 13px;
+  }
+}
+
+.user-info-button {
+  padding: 6px;
+  i {
+    font-size: 32px;
+  }
+}
+
+.users {
+
+  .bootstrap-table table.table tbody tr td.actions_column a, .bootstrap-table table.table tbody tr td.actions_column button {
+    height: 30px;
+  }
+
+  .user-info-button {
+    padding: 0;
+  }
+
+  .icon-button {
+    background-color: transparent;
+  }
+  .del-user {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-size: cover;
+    background-image: url('/images/light/campaign_icons/ic-l-t4p.png');
+    &:hover {
+      background-image: url('/images/light/campaign_icons/ic-l-t4a.png');
+    }
+  }
+  
+  
+  .edit-user {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-size: cover;
+    background-image: url('/images/light/campaign_icons/ic-l-t5p.png');
+    &:hover {
+      transition: all .3s ease-in-out;
+      background-image: url('/images/light/campaign_icons/ic-l-t5a.png');
+    }
+  }
+
+  .fixed-table-body {
+    table {
+      tbody {
+        tr {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.dark {
+  .fixed-table-pagination {
+    .page-list {
+      .dropup {
+        button {
+          background-color: #3c2c58;
+          border-color: #3c2c58;
+          color: #fff;
+        }
+      }
+    }
+
+    .pagination {
+      .page-pre,
+      .page-next,
+      .page-last,
+      .page-last-separator,
+      .page-first,
+      .page-first-separator {
+        a {
+          background-color: #3c2c58;
+          border-color: #3c2c58;
+          color: #fff;
+          &.active {
+            background-color: #524070;
+          }
+        }
+      }
+      .page-number {
+        a {
+          background-color: #3c2c58;
+          border-color: #3c2c58;
+          color: #fff;
+        }
+          &.active {
+            a {
+              background-color: #524070;
+            }
+          }
+      }
+    }
+  }
+  .users {
+    .table-responsive {
+      border: none;
+    }
+    .del-user {
+      background-image: url('/images/dark/campaign_icons/ic-t4p.png');
+      &:hover {
+        background-image: url('/images/dark/campaign_icons/ic-t4a.png');
+      }
+    }
+    .edit-user {
+      background-image: url('/images/dark/campaign_icons/ic-t5p.png');
+      &:hover {
+        background-image: url('/images/dark/campaign_icons/ic-t5a.png');
+      }
+    }
+    .bordered {
+      &:hover {
+        background-color: #b934d6;
+      }
+    }
+
+    .form-group {
+      input,
+      .select2-container--default .select2-selection--single .select2-selection__rendered {
+        background-color: #3c2c58;
+        border-color: #3c2c58;
+        color: #999;  
+      }
+      .select2-container--default .select2-selection--single {
+        border-color: #3c2c58;
+      }
+    }
+
+    .fixed-table-container {
+      border: none;
+    }
+
+    .fixed-table-body {
+      table {
+        background-color: #2e1f46;
+        border-color: #2e1f46;
+        color: white;
+        td{
+          background-color: #2e1f46;
+          border: none;
+          &:not(:first-child) {
+          border-left: 1px solid #3c2c58;
+          }
+      }
+      tr {
+        &:not(:last-child) {
+        border-bottom: 1px solid #3c2c58;
+        }
+        &:hover {
+          background-color: #6d5296;
+        }
+  
+        th {
+          background-color: #3c2c58;
+          border: none;
+          color: #998da7;
+        }
+      }
+    }
+  }
+}
+
+  .user-panel {
+    background-color: #1f1139;
+    .form-group {
+      .form-control {
+        background-color: #3c2c58;
+        border-color:#3c2c58;
+        border-radius: 4px;
+      }
+      label {
+        color: #fff;
+      }
+    }
+
+    .select2-selection--single {
+      border-color:#3c2c58;
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+      background-color: #3c2c58;
+      color: #fff;
+    }
+    .button-submit {
+      background-color: #b934d6;
+      &:hover {
+        background-color: #8e24aa;
+      }
+    }
+  }
+}
+

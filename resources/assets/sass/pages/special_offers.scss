@@ -1,0 +1,282 @@
+.panel-special-offers {
+  
+  * {
+    font-family: 'Segoe UI', 'Open Sans Regular', sans-serif;
+  }
+
+  &__empty {
+    background-color: #e0e0e0;
+    border-radius: 4px; 
+    padding: 30px;
+  }
+  .offers-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 950px;
+    margin: 0 auto;
+    .offer {
+      position: relative;
+      width: 290px;
+      min-height: 670px;
+      background-image: url('/images/spec-offers.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: relative;
+      margin-bottom: 40px;
+      align-self: center;
+      &-header {
+        font-size: 28px;
+        color: #fff;
+        padding: 15px 0;
+        text-align: center;
+      }
+      &-price {
+        font-family: 'Segoe UI Bold', 'Open Sans Regular', sans-serif;
+        padding-top: 30px;
+        font-size: 52px;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        .guarantee {
+          text-transform: uppercase;
+          font-size: 16px;
+          font-weight: 700;
+          margin-top: 10px;
+          color: #2e1f46;
+        }
+        // &:after {
+        //   content: "";
+        //   display: block;
+        //   width: 0;
+        //   height: 0;
+        //   bottom: -25px;
+        //   left: 0;
+        //   position: absolute;
+        //   border-top: 25px solid #ededed;
+        //   border-left: 140px solid transparent;
+        //   border-right: 140px solid transparent;
+        //   @media (max-width: 392px) {
+        //     border-left-width: 7.5rem;
+        //     border-right-width: 7.5rem;
+        //   }
+        //   @media (min-width: 393px) and (max-width: 420px) {
+        //     border-left-width: 9rem;
+        //     border-right-width: 9rem;
+        //   }
+        //   @media (min-width: 421px) and (max-width: 535px) {
+        //     border-left-width: 11rem;
+        //     border-right-width: 11rem;
+        //   }
+        // }
+      }
+      &-features {
+        background-color: #2e1f46;
+        border-radius: 5px;
+        margin-top: 80px;
+        display: flex;
+        &-list {
+          width: 100%;
+          flex-direction: column;
+          margin-bottom: 150px;
+          li {
+            padding: 15px 0;
+            color: #fff;
+            text-align: center;
+            }
+          }
+        }
+      
+      &-footer {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        form {
+          width: 100%;
+        }
+        &__inputs {
+          padding: 0 10px;
+          input {
+            border-radius: 4px;
+            color: #7a6c91;
+            background-color: #463367;
+            border-color: #463367;
+          }
+        }
+        .button-buy,
+        .button-edit {
+          width: 100%;
+          color: #fff;
+          font-size: 15px;
+          padding: 15px;
+          text-align: center;
+          text-transform: uppercase;
+          transition: all .3s ease-in-out;
+          background-color: #b934d6;
+
+          &:hover {
+            color: #fff;
+            background-color: #8e24aa;
+            text-decoration: none;
+          }
+          &.delete-offer {
+            background-color: #8e24aa;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            &:hover {
+              background-color: #b934d6;
+            }
+          }
+        }
+        .button-buy {
+          border-bottom-right-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+      }
+      // &.offer-popular {
+      //   width: 290px;
+      //   .offer-header {
+      //     color: #fff;
+      //   }
+      //   .offer-price {
+      //     background: transparent;
+      //     color: #fff;
+      //     .guarantee {
+      //       color: #fff;
+      //     }
+      //   }
+      //   .offer-features {
+      //     padding: 12px 0;
+      //   }
+      //   .offer-footer {
+      //     .button-buy {
+      //       color: #fff;
+      //       background-color: #46b790;
+      //       padding: 12px;
+      //       &:hover {
+      //         background-color: darken(#46b790, 10%);
+      //       }
+      //     }
+      //   }
+      // }
+    }
+  }
+}
+
+.offer-popular-badge {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+  background-image: url('../images/popular-badge.png');
+  background-size: cover;
+  top: 30px;
+  right: 5px;
+  font-family: 'Cuprum Bold', 'Open Sans Regular', sans-serif;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.panel-offer-form {
+  padding: 25px 20px;
+  .form-group {
+    label {
+      margin-bottom: 10px;
+    }
+  }
+
+  .feature-delete-wrapper {
+    text-align: right;
+    .feature-delete {
+      margin-top: -1px;
+      margin-right: 0;
+      i {
+        font-size: 32px;
+      }
+      &:hover {
+        background-color: #d9534f;
+      }
+    }
+  }
+}
+
+#buyModal {
+  .modal-dialog {
+    padding-top: 18%;
+  }
+
+  .button {
+    font-size: 18px;
+  }
+
+  .button-wrap {
+    min-width: 260px;
+    max-width: 260px;
+    &.col-md-3,
+    &.col-lg-3 {
+      padding-right: 15px;
+    }
+  }
+}
+
+.show-offer-features {
+  list-style-type: disc;
+  li {
+    font-size: 18px;
+    margin-left: 20px;
+  }
+}
+
+
+.dark {
+  
+  .panel-offer-form {
+    background-color: #2e1f46;
+    color: #fff;
+    .slider:before {
+      border-color: #1f1139;
+    }
+  }
+  .panel-special-offers {
+    background-color: #3c2c58;
+    color: #fff;
+    &__empty {
+      color: #fff;
+      background-color: #6a1b9a;
+    }
+  }
+  .form-group {
+    
+    input{
+      background-color: #463367;
+      border-color: #463367;
+      border-radius: 4px;
+      color: #fff;
+    }
+
+    .input-group-addon {
+      background-color: #412f5e;
+      color: #fff;
+      border-color: #463367;
+    }
+  }
+
+  .feature-delete-wrapper {
+    .icon-button {
+      background: transparent;
+    }
+  }
+
+  .slider {
+    &:before {
+      border-color: #2e1f46;
+    }
+  }
+}

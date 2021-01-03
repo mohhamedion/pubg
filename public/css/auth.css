@@ -1,0 +1,575 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "Roboto Thin";
+  font-style: normal;
+  font-weight: 100;
+  src: url("/fonts/Roboto-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto ThinItalic";
+  font-style: italic;
+  font-weight: 100;
+  src: url("/fonts/Roboto-ThinItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto Light";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/fonts/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto LightItalic";
+  font-style: italic;
+  font-weight: 300;
+  src: url("/fonts/Roboto-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/Roboto-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto MediumItalic";
+  font-style: italic;
+  font-weight: 500;
+  src: url("/fonts/Roboto-MediumItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto BoldItalic";
+  font-style: italic;
+  font-weight: 700;
+  src: url("/fonts/Roboto-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto Black";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/fonts/Roboto-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto BlackItalic";
+  font-style: italic;
+  font-weight: 900;
+  src: url("/fonts/Roboto-BlackItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/OpenSans-Regular.woff") format("woff"), url("/fonts/OpenSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Relaway Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Raleway-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/SegoeUI.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Segoe UI Bold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/SegoeUI-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Cuprum Bold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Cuprum-Bold.ttf") format("truetype");
+}
+
+/*!
+ * Icon Font application
+ * Made with love by Icons8 [ https://icons8.com/ ] using FontCustom [ https://github.com/FontCustom/fontcustom ]
+ *
+ * Contacts:
+ *    [ https://icons8.com/contact ]
+ *
+ * Follow Icon8 on
+ *    Twitter [ https://twitter.com/icons_8 ]
+ *    Facebook [ https://www.facebook.com/Icons8 ]
+ *    Google+ [ https://plus.google.com/+Icons8 ]
+ *    GitHub [ https://github.com/icons8 ]
+ */
+
+@font-face {
+  font-family: "application";
+  src: url("/fonts/application_7bf153f49efe03688709fe4a594ba51d.eot");
+  src: url("/fonts/application_7bf153f49efe03688709fe4a594ba51d.eot?#iefix") format("embedded-opentype"), url("/fonts/application_7bf153f49efe03688709fe4a594ba51d.woff2") format("woff2"), url("/fonts/application_7bf153f49efe03688709fe4a594ba51d.woff") format("woff"), url("/fonts/application_7bf153f49efe03688709fe4a594ba51d.ttf") format("truetype"), url("/fonts/application_7bf153f49efe03688709fe4a594ba51d.svg#application") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+@font-face {
+    font-family: "application";
+    src: url("/fonts/application_7bf153f49efe03688709fe4a594ba51d.svg#application") format("svg");
+}
+}
+
+[data-icons8]:before,
+.icons8-1h:before,
+.icons8-24h:before,
+.icons8-aso:before,
+.icons8-balance:before,
+.icons8-clock:before,
+.icons8-comment:before,
+.icons8-days:before,
+.icons8-delete:before,
+.icons8-description:before,
+.icons8-dollar:before,
+.icons8-dollar2:before,
+.icons8-edit:before,
+.icons8-exit:before,
+.icons8-faq:before,
+.icons8-geotarget:before,
+.icons8-globus:before,
+.icons8-graph:before,
+.icons8-home:before,
+.icons8-info:before,
+.icons8-mail:before,
+.icons8-menubars:before,
+.icons8-percent:before,
+.icons8-phone:before,
+.icons8-play:before,
+.icons8-rocket:before,
+.icons8-rocket-top:before,
+.icons8-skype:before,
+.icons8-stats:before,
+.icons8-success:before,
+.icons8-tap:before,
+.icons8-target:before,
+.icons8-tracking-link:before,
+.icons8-user:before,
+.icons8-users:before,
+.icons8-video:before {
+  display: inline-block;
+  font-family: "application";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+[data-icons8]:before {
+  content: attr(data-icons8);
+}
+
+.icons8-1h:before {
+  content: "\F100";
+}
+
+.icons8-24h:before {
+  content: "\F101";
+}
+
+.icons8-aso:before {
+  content: "\F102";
+}
+
+.icons8-balance:before {
+  content: "\F103";
+}
+
+.icons8-clock:before {
+  content: "\F104";
+}
+
+.icons8-comment:before {
+  content: "\F105";
+}
+
+.icons8-days:before {
+  content: "\F106";
+}
+
+.icons8-delete:before {
+  content: "\F107";
+}
+
+.icons8-description:before {
+  content: "\F108";
+}
+
+.icons8-dollar:before {
+  content: "\F109";
+}
+
+.icons8-dollar2:before {
+  content: "\F10A";
+}
+
+.icons8-edit:before {
+  content: "\F10B";
+}
+
+.icons8-exit:before {
+  content: "\F10C";
+}
+
+.icons8-faq:before {
+  content: "\F10D";
+}
+
+.icons8-geotarget:before {
+  content: "\F10E";
+}
+
+.icons8-globus:before {
+  content: "\F10F";
+}
+
+.icons8-graph:before {
+  content: "\F110";
+}
+
+.icons8-home:before {
+  content: "\F111";
+}
+
+.icons8-info:before {
+  content: "\F112";
+}
+
+.icons8-mail:before {
+  content: "\F113";
+}
+
+.icons8-menubars:before {
+  content: "\F114";
+}
+
+.icons8-percent:before {
+  content: "\F115";
+}
+
+.icons8-phone:before {
+  content: "\F116";
+}
+
+.icons8-play:before {
+  content: "\F117";
+}
+
+.icons8-rocket:before {
+  content: "\F118";
+}
+
+.icons8-rocket-top:before {
+  content: "\F119";
+}
+
+.icons8-skype:before {
+  content: "\F11A";
+}
+
+.icons8-stats:before {
+  content: "\F11B";
+}
+
+.icons8-success:before {
+  content: "\F11C";
+}
+
+.icons8-tap:before {
+  content: "\F11D";
+}
+
+.icons8-target:before {
+  content: "\F11E";
+}
+
+.icons8-tracking-link:before {
+  content: "\F11F";
+}
+
+.icons8-user:before {
+  content: "\F120";
+}
+
+.icons8-users:before {
+  content: "\F121";
+}
+
+.icons8-video:before {
+  content: "\F122";
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.auth {
+  font-family: "Roboto Regular", "Open Sans Regular", sans-serif;
+}
+
+.auth-layout {
+  background-image: url("/images/bg.jpg");
+  background-size: cover;
+  position: relative;
+  min-height: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.auth-logo {
+  width: 400px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.auth-logo a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.auth-logo a:hover {
+  text-decoration: none;
+  color: #00df98;
+}
+
+.auth .form-wrapper {
+  padding-top: 30px;
+}
+
+.auth .form-wrapper form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 1440px) {
+  .auth .form-wrapper * {
+    font-size: 15px;
+  }
+}
+
+.auth-content {
+  background-color: #fff;
+  width: 400px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  margin-bottom: 135px;
+}
+
+@media (max-width: 420px) {
+  .auth-content {
+    width: 90%;
+  }
+}
+
+.auth .inputfield {
+  width: 90%;
+  padding: 8px 12px;
+  background: #2a2a2f;
+  border: 0;
+  margin: 5px 0;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.auth .signIn {
+  width: 100%;
+  border: 0;
+  margin-top: 20px !important;
+  padding: 20px 0;
+  font-size: 16px;
+  background: #f2c94c;
+  border-radius: 0;
+  font-family: "Roboto Regular", "Open Sans Regular", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.auth .button {
+  text-decoration: none;
+  color: #fff;
+}
+
+.auth .button:hover {
+  background-color: #f1b500;
+}
+
+.auth .button-flat-panel {
+  color: #c9d3e1;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  display: block;
+  padding: 20px 0;
+  text-align: center;
+  border-radius: 0;
+  text-decoration: none;
+  font-family: "Roboto Regular", "Open Sans Regular", sans-serif;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.auth .button-flat-panel:hover {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+#forgot-password-link {
+  display: block;
+  text-align: center;
+  color: #6c7a8d;
+  text-decoration: none;
+  margin-top: 35px;
+}
+
+.socials ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.socials ul li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.socials ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.socials-item {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 24px;
+  color: #6c7a8d;
+  background-size: cover;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.socials .phone {
+  background-image: url("/images/socials/ic-soc-1a.png");
+}
+
+.socials .phone:hover {
+  background-image: url("/images/socials/ic-soc-1p.png");
+}
+
+.socials .telegram {
+  background-image: url("/images/socials/ic-soc-2a.png");
+}
+
+.socials .telegram:hover {
+  background-image: url("/images/socials/ic-soc-2p.png");
+}
+
+.socials .skype {
+  background-image: url("/images/socials/ic-soc-3a.png");
+}
+
+.socials .skype:hover {
+  background-image: url("/images/socials/ic-soc-3p.png");
+}
+
+.socials .message {
+  background-image: url("/images/socials/ic-soc-4a.png");
+}
+
+.socials .message:hover {
+  background-image: url("/images/socials/ic-soc-4p.png");
+}
+
+.copyright {
+  color: #7a8eab;
+  text-align: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+

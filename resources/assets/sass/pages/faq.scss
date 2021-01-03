@@ -1,0 +1,192 @@
+.empty-faq {
+  margin: 10px 0;
+  background-color: #e0e0e0;
+  padding: 30px;
+  border-radius: 5px;
+}
+.panel-questions {
+  padding: 40px 0px;
+    .question {
+      font-family: 'Roboto Light', 'Open Sans Regular', sans-serif;
+      color: #60666a;
+      background-color: #fff;
+      border-radius: 5px;
+      position: relative;
+      padding: 20px;
+      transition: all .3s ease-in-out;
+      &:hover {
+        cursor: pointer;
+      }
+      &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__chevron {
+          width: 22px;
+          height: 22px;
+          background-size: cover;
+          transition: .1s;
+          background-image: url('/images/light/icons/ic-l-drop.png');
+        }
+      }
+      &-text {
+        font-size: 18px;
+        display: inline-block;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      &:not(:first-child) {
+        margin-top: 15px;
+      }
+      &.active {
+          background-color: #e0e0e0;
+          .question-header__chevron {
+            transition: .1s;
+            background-image: url('/images/light/icons/ic-l-up.png');
+          }
+      }
+      &:hover {
+        color: #35414f;  
+      }
+      &-answer {
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.2s ease-out;
+        background-color: #fff;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        &__text {
+          min-height: 70px;
+          width: 90%;
+          padding: 20px;
+        }
+        &__actions {
+          padding-top: 10px;
+          padding-right: 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+    
+}
+
+
+
+.faq-delete-wrapper {
+  display: none;
+  height: 30px;
+  font-size: 32px;
+  margin-top: -5px;
+  float: right;
+  a {
+    .delete-question {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background-size: cover;
+      background-image: url('/images/light/icons/ic-l-delete-p.png');
+      &:hover {
+        background-image: url('/images/light/icons/ic-l-delete-a.png');
+      }
+    }
+
+    .edit-question {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background-size: cover;
+      background-image: url('/images/light/icons/ic-l-edit-p.png');
+      &:hover {
+        background-image: url('/images/light/icons/ic-l-edit-a.png');
+      }
+    }
+    &.edit {
+      color: $brand-color-darker;
+      &:hover {
+        color: darken($brand-color-darker, 10%);
+      }
+    }
+  }
+}
+&:hover {
+  .faq-delete-wrapper {
+    display: inline-block;
+  }
+}
+}
+
+.panel-faq-form {
+  padding: 25px 0px;
+  .form-group {
+    label {
+      color: #777;
+      padding-bottom: 15px;
+    }
+  }
+
+  .button {
+    padding: 10px 35px;
+  }
+}
+
+.dark {
+  .empty-faq {
+    background-color: #6a1b9a;
+    color: #fff;
+  }
+
+  .panel-questions {
+    background-color: #1f1139;
+    .question {
+      background-color: #3c2c58;
+      color: #fff;
+      &-header {
+        &__chevron {
+          background-image: url('/images/dark/icons/ic-drop.png');
+        }
+      }
+      
+      &.active {
+        background-color: #2e1f46;
+        .question-header__chevron {
+          background-image: url('/images/dark/icons/ic-up.png');
+        }
+    }
+  }
+  .question-answer {
+    color: #fff;
+    background-color: #3c2c58;
+  }
+  .faq-delete-wrapper {
+    a {
+      .delete-question {
+        background-image: url('/images/dark/icons/ic-delete-p.png');
+      &:hover {
+        background-image: url('/images/dark/icons/ic-delete-a.png');
+        }
+      }
+
+      .edit-question {
+        background-image: url('/images/dark/icons/ic-edit-p.png');
+      &:hover {
+        background-image: url('/images/dark/icons/ic-edit-a.png');
+      }
+      }
+    }
+  }
+}
+
+.form-group {
+  textarea {
+    background-color: #3c2c58;
+    color: #fff;
+    border-color: #3c2c58;
+    border-radius: 5px;
+  }
+}
+}

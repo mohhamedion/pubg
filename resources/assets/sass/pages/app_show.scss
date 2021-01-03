@@ -1,0 +1,154 @@
+.panel-application-show {
+  padding: 25px 25px 0;
+  .reviews-comments {
+    margin: 15px 0;
+  }
+}
+
+.dark {
+  .reviews-comments {
+    color: #fff;
+  }
+  .changes-history {
+    padding: 25px;
+    background-color: #1f1139;
+    table {
+      border-color: #3c2c58;
+      thead {
+        tr{
+          th{
+            background-color: #3c2c58;
+            color: #999;
+            border-color: #3c2c58;
+          }
+         
+        }
+      }
+      tbody {
+        tr {
+          td {
+            background-color: #2e1f46;
+            border: 1px solid #3c2c58;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  
+  .panel-buttons {
+    background-color: #1f1139;
+  }
+
+  .panel-application-show {
+    background-color: #1f1139;
+
+    .highcharts-background {
+      fill: #3c2c58;
+    }
+  
+    .highcharts-markers {
+      path {
+        fill: #60d7e9;
+      }
+    }
+
+    .highcharts-axis-labels,
+    .highcharts-xaxis-labels {
+      text {
+        fill: #fff !important;
+        tspan {
+          fill: #fff !important;
+        }
+      }
+    }
+
+    .highcharts-graph {
+        stroke: #60d7e9;
+    }
+    .highcharts-legend {
+    .highcharts-legend-item {
+      text {
+        fill: #fff !important;
+      }
+      .highcharts-point {
+          fill: #60d7e9;
+      }
+      text {
+        color: #fff;
+        fill: #fff;
+      }
+    }
+  }
+    .table-responsive {
+      border: none;
+    }
+
+    .chart-heading {
+      color: #fff;
+    }
+
+    .search {
+      input {
+        background-color: #3c2c58;
+        border-color: #3c2c58;
+        color: #fff;
+      }
+
+    }
+
+    .bordered {
+      &:hover {
+        background-color: #b934d6;
+      }
+    }
+
+    .form-group {
+      input,
+      .select2-container--default .select2-selection--single .select2-selection__rendered {
+        background-color: #3c2c58;
+        border-color: #3c2c58;
+        color: #999;  
+      }
+      .select2-container--default .select2-selection--single {
+        border-color: #3c2c58;
+      }
+    }
+
+    .fixed-table-container {
+      border: none;
+    }
+
+    .fixed-table-body,
+    .table-responsive {
+      table {
+        background-color: #2e1f46;
+        border-color: #2e1f46;
+        color: white;
+        td{
+          background-color: #2e1f46;
+          border: none;
+          &:not(:first-child) {
+          border-left: 1px solid #3c2c58;
+          }
+      }
+      tr {
+        &:not(:last-child) {
+        border-bottom: 1px solid #3c2c58;
+        }
+        &:hover {
+          background-color: #6d5296;
+        }
+  
+        th {
+          background-color: #3c2c58;
+          border: none;
+          color: #998da7;
+        }
+      }
+    }
+  }
+  }
+
+  
+}

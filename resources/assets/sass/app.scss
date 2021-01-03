@@ -1,0 +1,37 @@
+@import "partials/parts";
+@import "variables";
+@import "partials/header";
+@import "partials/nav";
+@import "partials/common";
+@import "pages/auth";
+@import "pages/home";
+@import "pages/campaigns";
+@import "pages/app_edit";
+@import "pages/app_show";
+@import "pages/balance";
+@import "pages/account";
+@import "pages/special_offers";
+@import "pages/transactions";
+@import "pages/settings";
+@import "pages/payment_systems";
+@import "pages/roulette";
+@import "pages/services";
+@import "pages/users";
+@import "pages/faq";
+@import "pages/moderating_review";
+@import "pages/news";
+@import "pages/partners";
+@import "pages/hotfixes";
+
+@import "pages/agreement";
+@import "pages/participants";
+@import "pages/stats";
+// add new style   --Kostya
+@import "pages/moderating";
+
+// @import "partials/parts-first";
+// @import "partials/header-first";
+// @import "partials/nav-first";
+// @import "pages/account-first";
+// @import "pages/campaigns-first";
+// @import "pages/transactions-first";

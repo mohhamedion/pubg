@@ -1,0 +1,110 @@
+.dark_campaigns {
+	// background-color: #1f1139;
+	border: 0;
+	padding: 0;
+	.dark_campaigns-title {
+		font-family: "SF UI Display", sans-serif;
+		font-size: 30px;
+		font-weight: 300;
+		text-transform: inherit;
+		color: #000;
+		margin: 20px 0 40px 0;
+	}
+	.title-line {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: flex-start;
+		.dark-app_title {
+			font-family: "SF UI Display", sans-serif;
+			font-size: 18px;
+			font-weight: 400;
+			color: #000;
+			margin-bottom: 20px;
+		}
+		.dark-app_span {
+			display: block;
+			font-family: "SF UI Display", sans-serif;
+			font-size: 9.43px;
+			font-weight: 400;
+			color: #fff;
+			background-color: #F2C94C;
+			padding: 4px 7px 4px 6px;
+			border-radius: 25px;
+			width: max-content;
+			margin-left: 17px;
+		}
+		.dark-app_btn {
+			font-family: "SF UI Display", sans-serif;
+			font-size: 9.43px;
+			font-weight: 300;
+			color: #fff;
+			background-color: #3caaff;
+			padding: 5px 10px 5px 9px;
+			border: 0;
+			border-radius: 5px;
+			margin-left: 13px;
+			&:hover {
+				background-color: #2196f3;
+			}
+		}		
+	}
+}	
+.dark {
+	.dark_campaigns {
+		background-color: #1f1139;
+		border: 0;
+		padding: 0;
+		.dark_campaigns-title {
+			font-family: "SF UI Display", sans-serif;
+			font-size: 30px;
+			font-weight: 300;
+			text-transform: inherit;
+			color: #fff;
+			margin: 20px 0 40px 0;
+		}
+		.title-line {
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			align-items: flex-start;
+			.dark-app_title {
+				font-family: "SF UI Display", sans-serif;
+				font-size: 18px;
+				font-weight: 400;
+				color: #bdbdbd;
+				margin-bottom: 20px;
+			}
+			.dark-app_span {
+				display: block;
+				font-family: "SF UI Display", sans-serif;
+				font-size: 9.43px;
+				font-weight: 400;
+				color: #fff;
+				background-color: #F2C94C;
+				padding: 4px 7px 4px 6px;
+				border-radius: 25px;
+				width: max-content;
+				margin-left: 17px;
+			}
+			.dark-app_btn {
+				font-family: "SF UI Display", sans-serif;
+				font-size: 9.43px;
+				font-weight: 300;
+				color: #fff;
+				background-color: #26376b;
+				padding: 5px 10px 5px 9px;
+				border: 0;
+				border-radius: 5px;
+				margin-left: 13px;
+				&:hover {
+					background-color: #2196f3;
+				}
+			}		
+		}
+	}	
+}

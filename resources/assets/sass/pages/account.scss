@@ -1,0 +1,171 @@
+// .panel-account {
+//   padding: 20px;
+//   .form-group {
+//     font-size: 18px;
+//     label {
+//       font-family: 'Roboto Thin', 'Roboto Light', sans-serif;
+//       margin: 10px 0;
+//     }
+//     @media (max-width: 1440px) {
+//       font-size: 16px;
+//     }
+//   }
+//   input {
+//     font-size: 18px;
+//     @media (max-width: 1440px) {
+//       font-size: 16px;
+//     }
+//   }
+// }
+
+.dark-title {
+  font-family: "SF UI Display", sans-serif;
+  color: #000;
+  font-size: 30px;
+  font-weight: 300;
+  padding: 0 0 38px 0;
+}
+.first-btn {
+  padding: 50px 0 45px 0;
+}
+.second-btn {
+  padding: 50px 0 26px 0;
+}
+.dark-panel {
+  // background-color: #1f1139;
+  border: 0;
+  padding: 0;
+  .form-group {
+    label {
+      font-family: "SF UI Display", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: #777777;
+      padding-bottom: 12px;
+    }
+    input {
+      border-radius: 5px;
+      border: 0;
+      padding: 11px 10px 10px 10px;
+      background-color: #fff;
+      color: #424242;
+      font-size: 12px;
+    }
+  }
+
+  .dark-button {
+    background-color: #2a2a2f;
+    margin: 29px 0 26px 0;
+    padding: 11px 49px 11px;
+    border-radius: 3px;
+    font-family: "SF UI Display", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    &:hover {
+      background-color: #46464c;
+    }
+  }
+
+  .dark-text {
+    font-family: "SF UI Display", sans-serif;
+    color: #000;
+    font-size: 18px;
+    font-weight: 300;
+    padding-bottom: 24px;
+    .dark-link {
+      color: #000;
+      font-weight: 500;
+    }
+  }
+  .dark-input__api {
+    font-family: "SF UI Display", sans-serif;
+    color: #616161;
+    font-size: 16px;
+    font-weight: 400;
+    width: 100%;
+    background-color: #fff;
+    border: 0;
+    border-radius: 3px;
+    padding: 11px 10px 10px 10px;
+  }
+}
+
+.dark {
+  .dark-title {
+    font-family: "SF UI Display", sans-serif;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 300;
+    padding: 0 0 38px 0;
+  }
+  .first-btn {
+    padding: 50px 0 45px 0;
+  }
+  .second-btn {
+    padding: 50px 0 26px 0;
+  }
+  .dark-panel {
+    background-color: #1f1139;
+    border: 0;
+    padding: 0;
+    .form-group {
+      label {
+        font-family: "SF UI Display", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        color: #fff;
+        padding-bottom: 12px;
+      }
+      input {
+        border-radius: 5px;
+        border: 0;
+        padding: 11px 10px 10px 10px;
+        background-color: #3c2c58;
+        color: #fff;
+        font-size: 12px;
+      }
+    }
+
+    .dark-button {
+      background-color: #452280;
+      margin: 29px 0 26px 0;
+      padding: 11px 49px 11px;
+      border-radius: 3px;
+      font-family: "SF UI Display", sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      &:hover {
+        background-color: #6a1b9a;
+      }
+    }
+
+    .dark-text {
+      font-family: "SF UI Display", sans-serif;
+      color: #bdbdbd;
+      font-size: 18px;
+      font-weight: 300;
+      padding-bottom: 24px;
+      .dark-link {
+        color: #fff;
+        font-weight: 500;
+      }
+    }
+    .dark-input__api {
+      font-family: "SF UI Display", sans-serif;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 400;
+      width: 100%;
+      background-color: #3c2c58;
+      border: 0;
+      border-radius: 3px;
+      padding: 11px 10px 10px 10px;
+    }
+  }
+}
+
+@media (max-width: 392px) {
+  .light .dark-panel .dark-input__api {
+    font-size: 12px;
+  }
+}

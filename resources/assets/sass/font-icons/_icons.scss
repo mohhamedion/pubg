@@ -1,0 +1,80 @@
+// Icons
+// -------------------------
+
+
+[data-icons8]:before,
+.icons8-1h:before,
+.icons8-24h:before,
+.icons8-aso:before,
+.icons8-balance:before,
+.icons8-clock:before,
+.icons8-comment:before,
+.icons8-days:before,
+.icons8-delete:before,
+.icons8-description:before,
+.icons8-dollar:before,
+.icons8-dollar2:before,
+.icons8-edit:before,
+.icons8-exit:before,
+.icons8-faq:before,
+.icons8-geotarget:before,
+.icons8-globus:before,
+.icons8-graph:before,
+.icons8-home:before,
+.icons8-info:before,
+.icons8-mail:before,
+.icons8-menubars:before,
+.icons8-percent:before,
+.icons8-phone:before,
+.icons8-play:before,
+.icons8-rocket:before,
+.icons8-rocket-top:before,
+.icons8-skype:before,
+.icons8-stats:before,
+.icons8-success:before,
+.icons8-tap:before,
+.icons8-target:before,
+.icons8-tracking-link:before,
+.icons8-user:before,
+.icons8-users:before,
+.icons8-video:before
+{ @include icons8-font; }
+
+[data-icons8]:before { content: attr(data-icons8); }
+
+.icons8-1h:before { content: $icons8-var-1h; }
+.icons8-24h:before { content: $icons8-var-24h; }
+.icons8-aso:before { content: $icons8-var-aso; }
+.icons8-balance:before { content: $icons8-var-balance; }
+.icons8-clock:before { content: $icons8-var-clock; }
+.icons8-comment:before { content: $icons8-var-comment; }
+.icons8-days:before { content: $icons8-var-days; }
+.icons8-delete:before { content: $icons8-var-delete; }
+.icons8-description:before { content: $icons8-var-description; }
+.icons8-dollar:before { content: $icons8-var-dollar; }
+.icons8-dollar2:before { content: $icons8-var-dollar2; }
+.icons8-edit:before { content: $icons8-var-edit; }
+.icons8-exit:before { content: $icons8-var-exit; }
+.icons8-faq:before { content: $icons8-var-faq; }
+.icons8-geotarget:before { content: $icons8-var-geotarget; }
+.icons8-globus:before { content: $icons8-var-globus; }
+.icons8-graph:before { content: $icons8-var-graph; }
+.icons8-home:before { content: $icons8-var-home; }
+.icons8-info:before { content: $icons8-var-info; }
+.icons8-mail:before { content: $icons8-var-mail; }
+.icons8-menubars:before { content: $icons8-var-menubars; }
+.icons8-percent:before { content: $icons8-var-percent; }
+.icons8-phone:before { content: $icons8-var-phone; }
+.icons8-play:before { content: $icons8-var-play; }
+.icons8-rocket:before { content: $icons8-var-rocket; }
+.icons8-rocket-top:before { content: $icons8-var-rocket-top; }
+.icons8-skype:before { content: $icons8-var-skype; }
+.icons8-stats:before { content: $icons8-var-stats; }
+.icons8-success:before { content: $icons8-var-success; }
+.icons8-tap:before { content: $icons8-var-tap; }
+.icons8-target:before { content: $icons8-var-target; }
+.icons8-tracking-link:before { content: $icons8-var-tracking-link; }
+.icons8-user:before { content: $icons8-var-user; }
+.icons8-users:before { content: $icons8-var-users; }
+.icons8-video:before { content: $icons8-var-video; }
+

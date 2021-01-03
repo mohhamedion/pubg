@@ -1,0 +1,21 @@
+@import "mixins";
+
+$fonts_folder: '/fonts/'; // Folder to which browser will requests for font
+
+@include font-face("Roboto Thin", $fonts_folder + 'Roboto-Thin', 100, normal, ttf);
+@include font-face("Roboto ThinItalic", $fonts_folder + 'Roboto-ThinItalic', 100, italic, ttf);
+@include font-face("Roboto Light", $fonts_folder + 'Roboto-Light', 300, normal, ttf);
+@include font-face("Roboto LightItalic", $fonts_folder + 'Roboto-LightItalic', 300, italic, ttf);
+@include font-face("Roboto Regular", $fonts_folder + 'Roboto-Regular', 400, normal, ttf);
+@include font-face("Roboto Medium", $fonts_folder + 'Roboto-Medium', 500, normal, ttf);
+@include font-face("Roboto MediumItalic", $fonts_folder + 'Roboto-MediumItalic', 500, italic, ttf);
+@include font-face("Roboto Bold", $fonts_folder + 'Roboto-Bold', 700, normal, ttf);
+@include font-face("Roboto BoldItalic", $fonts_folder + 'Roboto-BoldItalic', 700, italic, ttf);
+@include font-face("Roboto Black", $fonts_folder + 'Roboto-Black', 900, normal, ttf);
+@include font-face("Roboto BlackItalic", $fonts_folder + 'Roboto-BlackItalic', 900, italic, ttf);
+
+@include font-face("Open Sans Regular", $fonts_folder + 'OpenSans-Regular', 400, normal, woff ttf);
+@include font-face("Relaway Regular", $fonts_folder + 'Raleway-Regular', 400, normal, ttf);
+@include font-face("Segoe UI", $fonts_folder + 'SegoeUI', 400, normal, ttf);
+@include font-face("Segoe UI Bold", $fonts_folder + 'SegoeUI-Bold', 400, normal, ttf);
+@include font-face("Cuprum Bold", $fonts_folder + 'Cuprum-Bold', 400, normal, ttf);

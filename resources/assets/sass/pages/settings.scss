@@ -1,0 +1,84 @@
+.panel-settings {
+  padding: 25px 20px;
+  font-size: 18px;
+  .nav-tabs {
+    border-bottom: none;
+    li {
+      &:not(:last-child) {
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+      a {
+        background-color: #dcdae0;
+        border-radius: 8px;
+        color: #a6a5a8;
+      }
+      &.active {
+        a {
+          background-color: #2a2a2f;
+          color: #fff;
+          border-color: transparent;
+        }
+      }
+    }
+  }
+  label {
+    margin-bottom: 15px;
+    color: #9f9f9f;
+  }
+  .tab-pane {
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
+  .col-md-6 {
+    padding-left: 0;
+  }
+
+  .price-settings {
+    h4 {
+      color: #9f9f9f;
+      padding: 10px 10px 10px 0;
+      font-size: 16px;
+    }
+  }
+
+  .promocode_rewards {
+    padding: 0;
+    margin: 15px 0;
+  }
+}
+
+
+.dark {
+  .panel-settings {
+    .nav-tabs {
+      li {
+        a {
+          background-color: #2f1e4d;
+          border-radius: 8px;
+          color: #a6a5a8;
+          &:hover {
+            border-color: transparent;
+          }
+        }
+        &.active {
+          a {
+            background-color: #dcdae0;
+            color: #2f1e4d;
+
+          }
+        }
+      }
+    }
+    .form-group {
+      select {
+        background-color: #3c2c58;
+        border-color: #3c2c58;
+      }
+
+      h4 {
+        color: #a6a5a8;
+      }
+    }
+  }
+}

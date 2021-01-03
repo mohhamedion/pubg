@@ -1,0 +1,31 @@
+LaravelFCM\Response\DownstreamResponse Object
+(
+    [numberTokensSuccess:protected] => 0
+    [numberTokensFailure:protected] => 1
+    [numberTokenModify:protected] => 0
+    [messageId:protected] => 
+    [tokensToDelete:protected] => Array
+        (
+        )
+
+    [tokensToModify:protected] => Array
+        (
+        )
+
+    [tokensToRetry:protected] => Array
+        (
+        )
+
+    [tokensWithError:protected] => Array
+        (
+            [eAKckenkxc0:APA91bFFkVykQOm4Z4HKLgCnZ6sSHH68nWZzFWlxTAYtxbhUJEhNrMhi3r0Nc5Q2UNbPQutWVRWqUqWUhGJzhAkOssWMBDuIAr3HeKc0CBRGrNi27wEPoRtKB9xVtQF-xHGbonwQN183] => MismatchSenderId
+        )
+
+    [hasMissingToken:protected] => 
+    [tokens:LaravelFCM\Response\DownstreamResponse:private] => Array
+        (
+            [0] => eAKckenkxc0:APA91bFFkVykQOm4Z4HKLgCnZ6sSHH68nWZzFWlxTAYtxbhUJEhNrMhi3r0Nc5Q2UNbPQutWVRWqUqWUhGJzhAkOssWMBDuIAr3HeKc0CBRGrNi27wEPoRtKB9xVtQF-xHGbonwQN183
+        )
+
+    [logEnabled:protected] => 
+)

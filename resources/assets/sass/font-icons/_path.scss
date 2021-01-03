@@ -1,0 +1,21 @@
+// Font paths
+// -------------------------
+
+@font-face {
+  font-family: "application";
+  src: url("/fonts/application_7bf153f49efe03688709fe4a594ba51d.eot");
+  src: url("/fonts/application_7bf153f49efe03688709fe4a594ba51d.eot?#iefix") format("embedded-opentype"),
+       url("/fonts/application_7bf153f49efe03688709fe4a594ba51d.woff2") format("woff2"),
+       url("/fonts/application_7bf153f49efe03688709fe4a594ba51d.woff") format("woff"),
+       url("/fonts/application_7bf153f49efe03688709fe4a594ba51d.ttf") format("truetype"),
+       url("/fonts/application_7bf153f49efe03688709fe4a594ba51d.svg#application") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "application";
+    src: url("/fonts/application_7bf153f49efe03688709fe4a594ba51d.svg#application") format("svg");
+  }
+}

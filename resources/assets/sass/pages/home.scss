@@ -1,0 +1,279 @@
+.panel-home {
+  padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  @media (max-width: 1440px) {
+    padding: 0 25px;
+    margin-bottom: 0;
+    .panel-title {
+      text-transform: uppercase;
+      font-size: 38px;
+      padding: 0 0 30px;
+    }
+  }
+  .buttons-container {
+    margin: 0 auto;
+    display: flex;
+    font-size: 18px;
+    i {
+      font-size: 24px;
+    }
+    a {
+      &:visited,
+      &:focus,
+      &:hover {
+        color: #fff;
+      }
+    }
+    span {
+      vertical-align: text-top; // To vertically align text opposite icon
+      font-family: 'Roboto Light', 'Open Sans Regular', sans-serif;
+      
+    }
+  }
+
+  .chev-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    &__chevron {
+      width: 30px;
+      height: 25px;
+      background-image: url('/images/main-points/ic-arrow-l.png');
+      background-size: cover;
+    }
+  }
+}
+
+.instructions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  @media (max-width: 1440px) {
+
+  }
+  &-wrapper {
+    width: 25%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    @media (max-width: 1140px) {
+      width: 50%;
+      text-align: center;
+    }
+    @media (min-width: 1140px) and (max-width: 1360px) {
+      width: 25%;
+    }
+    @media (max-width: 520px) {
+      width: 100%;
+    }
+  }
+  &-image {
+    position: relative;
+    height: 175px;
+    
+    img {
+      display: block;
+      position: relative;
+      height: 100%;
+      width: auto;
+    }
+  }
+  &-text {
+    margin-top: -15%;
+    position: relative;
+    width: 100%;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Roboto Light', 'Open Sans Regular', sans-serif;
+    text-align: center;
+    @media (max-width: 1440px) {
+      font-size: 13px;
+    }
+    @media (max-width: 1345px) {
+      font-size: 11px;
+    }
+  }
+}
+
+/** ADMIN HOME PAGE CHARTS */
+.chart-row {
+  .dates-wrapper {
+    padding: 0;
+  }
+  .two-column-table {
+    td:nth-child(even) {
+      padding-left: 20px;
+    }
+  }
+}
+
+.chart-load-wrapper,
+.chart-error-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  flex-direction: column;
+}
+
+// #users_task_chart,
+// #register_chart,
+// #awards_chart,
+// #transactions_chart {
+//   height: 457px;
+// }
+
+// @media (max-width: 370px) {
+//   height: 490px;
+// }
+
+#earned_chart {
+  height: 506px;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-charts {
+  .calendar {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-size: contain;
+    background-image: url('/images/light/icons/ic-date-p.png');
+  }
+
+  .panel {
+    background-color: #fff;
+    border-radius: 5px;
+  }
+
+  .statistics {
+    
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    &-item {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+      
+      &__amount {
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: #3c2c58;
+        margin-left: 15px;
+      }
+
+      .installs,
+      .register_users,
+      .total {
+        background-color: #60d7e9;
+      }
+
+      .runs,
+      .successful {
+        background-color: #a094ff;
+      }
+
+      .failed,
+      .register_manager,
+       {
+        background-color: #da61ff;
+      }
+    }
+  }
+}
+
+
+
+
+.dark {
+  .panel-charts {
+    rect {
+      fill: transparent !important;
+    }
+
+    .highcharts-legend {
+        text {
+          tspan {
+            fill: #fff;
+          }
+        }
+        g {
+          g {
+            g{
+              text {
+                fill: #fff !important;
+                font-weight: normal !important;
+              }
+            }
+          }
+        } 
+     }
+
+     .highcharts-button {
+       path {
+         fill: #594b71;
+         stroke: #34264d;
+       }
+       text {
+        fill: #34264d;
+       }
+     }
+
+     .highcharts-label-box {
+       fill: #25163e;
+       stroke: #25163e;
+     }
+    
+    .highcharts-axis-labels,
+    .highcharts-xaxis-labels{
+      text {
+        fill: #fff !important;
+        tspan{
+          fill: #fff;
+        }
+      }
+    }
+
+    text {
+      tspan {
+        fill: #fff;
+        font-weight: normal !important;
+        stroke: transparent;
+      }
+    }
+    
+   
+    .chart-row {
+      .panel{
+        background-color: #3c2c58;
+        border-radius: 5px;
+      } 
+    }
+    
+    .statistics {
+      color: #fff;
+    }
+  }
+  .home-content {
+    background-color: #1f1139;
+  }
+
+  .chev-container {
+    &__chevron {
+      background-image: url('/images/main-points/ic-arrow.png');
+    }
+  }
+}

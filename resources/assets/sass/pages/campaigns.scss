@@ -1,0 +1,372 @@
+.campaigns-panel {
+  .table-responsive {
+    border: none !important;
+  }
+  $font-family: 'Roboto Regular', 'Open Sans Regular', sans-serif;
+  .alert-info {
+    background-color: #e0e0e0;
+    color: black;
+    border-radius: 5px;
+    border-color: #e0e0e0;
+  }
+  .calendar {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-size: contain;
+    background-image: url('/images/light/icons/ic-date-p.png');
+    &:hover {
+      background-image: url('/images/light/icons/ic-date-a.png');
+    }
+  }
+  .button.primary {
+    padding: 10px 5px;
+  }
+
+  table {
+    background-color: #fff;
+    tbody {
+      tr  { 
+        td {
+          a {
+            align-items: flex-start;
+          }
+        }
+      }
+    } 
+  }
+  background-color: #eee;
+  padding: 15px;
+
+  h2.panel-title {
+    font-size: 24px;
+    text-align: left;
+    margin: 20px 0;
+    text-transform: uppercase;
+    padding: 0;
+    color: $text-color;
+    font-family: $font-family;
+  }
+
+  .thead_created_at {
+    @media (max-width: 1440px) {
+      .th-inner {
+        width: 110px;
+      }
+    }
+  }
+}
+
+.actions_column {
+  min-width: 220px;
+  max-width: 220px;
+  @media (min-width: 1841px) {
+    min-width: 150px;
+    max-width: 150px;
+  }
+  & .actions_items {
+    width: 30px !important;
+    height: 30px !important;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0 10px;
+    background-size: cover;
+
+   & .btn-task-status {
+      &:hover {
+        text-decoration: none !important;
+      }
+    }
+  }
+  & .edit {
+    background-image: url('/images/light/campaign_icons/ic-l-t1p.png');
+    &:hover {
+      background-image: url('/images/light/campaign_icons/ic-l-t1a.png');
+    }
+  }
+  & .start {
+    background-image: url('/images/light/campaign_icons/ic-l-t2p.png');
+    &:hover {
+      background-image: url('/images/light/campaign_icons/ic-l-t2a.png');
+    }
+  }
+  & .stats {
+    background-image: url('/images/light/campaign_icons/ic-l-t3p.png');
+    &:hover {
+      background-image: url('/images/light/campaign_icons/ic-l-t3a.png');
+    }
+  }
+  & .del {
+    background-image: url('/images/light/campaign_icons/ic-l-t4p.png');
+    &:hover {
+      background-image: url('/images/light/campaign_icons/ic-l-t4a.png');
+    }
+  }
+  }
+
+
+#toolbar {
+  .form-inline {
+    .form-group {
+      vertical-align: top;
+      &:not(:last-child) {
+        margin-right: 5px;
+      }
+      .form-control {
+        border-radius: 4px;
+        &[name=date_from],
+        &[name=date_to] {
+          width: 120px;
+        }
+        &[name=date_from] {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          border-right: none;
+        }
+        &[name=date_to] {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          border-left: none;
+        }
+      }
+    }
+  }
+}
+
+//
+.dark_campaigns {
+  // background-color: #1f1139;
+  border: 0;
+  padding: 0;
+  .dark_campaigns-title {
+    font-family: "SF UI Display", sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    text-transform: inherit;
+    color: #000;
+    margin: 20px 0 40px 0;
+  }
+  .title-line {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: flex-start;
+    .dark-app_title {
+      font-family: "SF UI Display", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: #000;
+      margin-bottom: 20px;
+    }
+    .dark-app_span {
+      display: block;
+      font-family: "SF UI Display", sans-serif;
+      font-size: 9.43px;
+      font-weight: 400;
+      color: #fff;
+      background-color: #F2C94C;
+      padding: 4px 7px 4px 6px;
+      border-radius: 25px;
+      width: max-content;
+      margin-left: 17px;
+    }
+    .dark-app_btn {
+      font-family: "SF UI Display", sans-serif;
+      font-size: 9.43px;
+      font-weight: 300;
+      color: #fff;
+      background-color: #3caaff;
+      padding: 5px 10px 5px 9px;
+      border: 0;
+      border-radius: 5px;
+      margin-left: 13px;
+      &:hover {
+        background-color: #2196f3;
+      }
+    }   
+  }
+} 
+
+.dark {
+  & h1,
+  & .panels-title{
+    color: white;
+  }
+
+  #review_stars_range {
+    background-color: #1f1139;
+  }
+
+  .actions_column {
+    & .edit {
+      background-image: url('/images/dark/campaign_icons/ic-t1p.png');
+      &:hover {
+        background-image: url('/images/dark/campaign_icons/ic-t1a.png');
+      }
+    }
+    & .start {
+      background-image: url('/images/dark/campaign_icons/ic-t2p.png');
+      &:hover {
+        background-image: url('/images/dark/campaign_icons/ic-t2a.png');
+      }
+    }
+    & .stats {
+      background-image: url('/images/dark/campaign_icons/ic-t3p.png');
+      &:hover {
+        background-image: url('/images/dark/campaign_icons/ic-t3a.png');
+      }
+    }
+    & .del {
+      background-image: url('/images/dark/campaign_icons/ic-t4p.png');
+      background-color: #2e1f46;
+      &:hover {
+        background-image: url('/images/dark/campaign_icons/ic-t4a.png');
+      }
+    }
+  }
+
+  .campaigns-panel {
+    background-color: #1f1139;
+    border-color: #1f1139;
+
+    .calendar {
+      background-image: url('/images/dark/icons/ic-date-p.png');
+      &:hover {
+        background-image: url('/images/dark/icons/ic-date-a.png');
+      }
+    }
+
+    h2.panel-title {
+      color: #fff;
+    }
+
+    .select2-container--default .select2-selection--single {
+      border: none;
+      background-color:#3c2c58;
+
+      .select2-selection__rendered {
+        border-radius: 6px;
+        background-color: #3c2c58;
+        color: white;
+       }
+    }
+
+    .date {
+      input {
+        background-color: #3c2c58;
+        border-color: #3c2c58;
+      }
+    }
+
+    .form-group {
+      input {
+        background-color: #3c2c58;
+        border-color: #3c2c58;
+      }
+    }
+
+    .input-group-addon {
+      background-color: #524070;
+      border: none;
+    }
+
+    table {
+      background-color: #2e1f46;
+      border-color: #2e1f46;
+      color: white;
+      td{
+        border: none;
+        &:not(:first-child) {
+        border-left: 1px solid #3c2c58;
+        }
+    }
+    tr {
+      &:not(:last-child) {
+      border-bottom: 1px solid #3c2c58;
+      }
+      &:hover {
+        background-color: #6d5296;
+      }
+
+      th {
+        background-color: #3c2c58;
+        border: none;
+        color: #998da7;
+      }
+    }
+    
+    .table-responsive
+      {
+      // border-color: #3c2c58;
+      }
+  }
+
+  .fixed-table-container {
+    border: none;
+  }
+}
+.alert-info {
+  background-color: #6a1b9a;
+  border-color: #6a1b9a;
+  color: white;
+}
+
+//
+.dark_campaigns {
+    background-color: #1f1139;
+    border: 0;
+    padding: 0;
+    .dark_campaigns-title {
+      font-family: "SF UI Display", sans-serif;
+      font-size: 30px;
+      font-weight: 300;
+      text-transform: inherit;
+      color: #fff;
+      margin: 20px 0 40px 0;
+    }
+    .title-line {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      align-items: flex-start;
+      .dark-app_title {
+        font-family: "SF UI Display", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        color: #bdbdbd;
+        margin-bottom: 20px;
+      }
+      .dark-app_span {
+        display: block;
+        font-family: "SF UI Display", sans-serif;
+        font-size: 9.43px;
+        font-weight: 400;
+        color: #fff;
+        background-color: #F2C94C;
+        padding: 4px 7px 4px 6px;
+        border-radius: 25px;
+        width: max-content;
+        margin-left: 17px;
+      }
+      .dark-app_btn {
+        font-family: "SF UI Display", sans-serif;
+        font-size: 9.43px;
+        font-weight: 300;
+        color: #fff;
+        background-color: #26376b;
+        padding: 5px 10px 5px 9px;
+        border: 0;
+        border-radius: 5px;
+        margin-left: 13px;
+        &:hover {
+          background-color: #2196f3;
+        }
+      }   
+    }
+  } 
+}
+

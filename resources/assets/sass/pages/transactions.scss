@@ -1,0 +1,420 @@
+// .transactions-panel {
+//   $font-family: 'Roboto Regular', 'Open Sans Regular', sans-serif;
+
+//   padding: 25px 20px;
+//   h2.panel-title {
+//     font-size: 24px;
+//     text-align: left;
+//     margin: 20px 0;
+//     text-transform: uppercase;
+//     padding: 0;
+//     color: $text-color;
+//     font-family: $font-family;
+//   }
+
+//   .label-count {
+//     width: 110px;
+//     line-height: 20px;
+//     padding: 4px 6px;
+//     font-size: 13px;
+//     margin-bottom: 10px;
+//     border-radius: 0;
+//     &-wrapper {
+//       width: 180px;
+//       vertical-align: top;
+//       display: flex;
+//       flex-direction: row;
+//       justify-content: space-between;
+//       align-items: baseline;
+//       font-size: 18px;
+//     }
+//   }
+
+//   .two-column-table {
+//     width: 100%;
+//     td.name {
+//       text-align: left;
+//     }
+//     td.value {
+//       text-align: right;
+//     }
+//   }
+
+//   .actions_column {
+//     min-width: 0;
+//     max-width: 100px;
+//     width: auto;
+//   }
+
+//   .transaction-locked-wrapper {
+//     display: inline-block;
+
+//   }
+
+//   .panel-info-statuses-wrapper {
+//     @media (max-width: 991px) {
+//       margin-top: 30px;
+//     }
+//   }
+
+//   .panel-info-statuses {
+//     padding-left: 30px;
+//     @media (max-width: 991px) {
+//       padding-left: 10px;
+//     }
+//     .form-group {
+//       margin-bottom: 0;
+//     }
+//     label[for=status] {
+//       display: inline-block;
+//     }
+//     .select2 {
+//       width: 100%;
+//     }
+//     .warning-message {
+//       font-size: 14px;
+//     }
+//     .alert {
+//       padding: 15px 10px;
+//     }
+//   }
+//   .button {
+//     font-size: 18px;
+//   }
+// }
+
+.transactions-panel {
+  $font-family: "SF UI Display", sans-serif;
+  padding: 0;
+  border: 0;
+
+  h2.panel-title {
+    margin: 50px 0 37px 0;
+    padding: 0;
+    font-family: $font-family;
+    font-weight: 300;
+    font-size: 30px;
+    color: #000;
+    text-align: left;
+  }
+  
+  .flex-wrap {
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flex;
+    display: -o-inline-flex;
+    display: inline-flex;
+    .label-count {
+      color: #fff;
+      // background-color: #47bf60;
+      border-radius: 3px;
+      font-family: $font-family;
+      font-weight: 400;
+      font-size: 16px;
+
+      width: 110px;
+      line-height: 20px;
+      padding: 4px 6px;
+      margin-bottom: 10px;
+      &-wrapper {
+        width: 131px;
+        vertical-align: top;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-right: 30px;
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 16px;
+        color: #000;
+      }
+    }
+  }
+
+  .form-control {
+    border: 1px solid #e8e8e8;
+  }
+  .select2-container {
+    font-family: $font-family;
+    font-size: 16.14px;
+    font-weight: 400;
+    color: #616161;
+  }
+  .select2-container .select2-selection--single {
+    border: 1px solid #e8e8e8;
+  }
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #616161;
+  }
+  #toolbar .form-inline .form-group .form-control[name=date_from],
+  #toolbar .form-inline .form-group .form-control[name=date_to] {
+    font-family: $font-family;
+    font-size: 16.14px;
+    font-weight: 400;
+    color: #616161;
+  }
+  .input-group.date .input-group-addon span {
+    width: 16px;
+    height: 17px;
+  }
+  .input-group-addon {
+    background-color: #e0e0e0;
+    border: 0;
+  }
+  .date-icon {
+    background-image: url('/images/date-calendar/ic-date-a.png');
+    background-size: cover;
+    display: block;
+    width: 16px;
+    height: 17px;
+    &:hover {
+      background-image: url('/images/date-calendar/ic-date-p.png');
+    }
+  }
+  #toolbar .form-inline .form-group .form-control {
+    font-family: $font-family;
+    font-size: 16.14px;
+    font-weight: 400;
+    color: #616161;
+  }
+
+
+  
+  .fixed-table-container thead th .th-inner {
+    background-color: #eeeeee;
+    font-family: "SF UI Display", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #7a7a7a;
+  }
+  .fixed-table-container .no-records-found {
+    background-color: #fff;
+  }
+
+  tbody {
+    background-color: #fff;
+    tr {
+      td {
+        font-family: "SF UI Display", sans-serif;
+        font-weight: 300;
+        font-size: 14px;
+        color: #000;
+        text-align: center;
+        a {
+          color: #000;
+          text-align: left;
+        }
+
+        .fa-2x {
+          font-size: 0;
+          background-image: url('/images/tab-icons/ic-close.png');
+          background-size: cover;
+          display: block;
+          width: 20px;
+          height: 20px;
+          margin: 0 auto;
+        }
+
+        .fa-cogs {
+          background-image: url('/images/tab-icons/_Very-Basic-Hand-Cursor-icon.png');
+        }
+
+        .icon-button {
+          background-image: url('/images/light/campaign_icons/ic-l-t1p.png');
+          background-size: cover;
+          display: block;
+          width: 30px;
+          height: 30px;
+          margin: 0 auto;
+          background-color: #0000;
+          &:hover {
+            background-image: url('/images/light/campaign_icons/ic-l-t1a.png');
+          }
+        }
+
+        .icons8-edit {
+          font-size: 0;
+        }
+      }
+    } 
+  }
+
+  .fixed-table-container {
+    border-radius: 3px;
+  }
+  .bootstrap-table table.table tbody tr td.actions_column a, .bootstrap-table table.table tbody tr td.actions_column button {
+    height: 30px;
+  }
+  .bootstrap-table table.table tbody tr td.actions_column {
+    max-width: 100px;
+    min-width: 100px;
+    padding: 0!important;
+  }
+  .table-hover > tbody > tr:hover {
+    background-color: #fff0;
+  }
+  
+
+
+  .two-column-table {
+    width: 100%;
+    td.name {
+      text-align: left;
+    }
+    td.value {
+      text-align: right;
+    }
+  }
+
+  .actions_column {
+    min-width: 0;
+    max-width: 100px;
+    width: auto;
+  }
+
+  .transaction-locked-wrapper {
+    display: inline-block;
+
+  }
+
+  .panel-info-statuses-wrapper {
+    @media (max-width: 991px) {
+      margin-top: 30px;
+    }
+  }
+
+  .panel-info-statuses {
+    padding-left: 30px;
+    @media (max-width: 991px) {
+      padding-left: 10px;
+    }
+    .form-group {
+      margin-bottom: 0;
+    }
+    label[for=status] {
+      display: inline-block;
+    }
+    .select2 {
+      width: 100%;
+    }
+    .warning-message {
+      font-size: 14px;
+    }
+    .alert {
+      padding: 15px 10px;
+    }
+  }
+  .button {
+    font-size: 18px;
+  }
+}
+
+.additional-user-info {
+  font-size: 16px;
+}
+
+.dark {
+  .panel {
+    background-color: #1f1139;
+  }
+  .transactions-panel {
+    .fixed-table-container {
+      .no-records-found {
+        background-color: #2e1f46; 
+      }
+    }
+        .panel-title {
+        color: #fff;
+      }
+
+    .flex-wrap  {
+        .label-count {
+        color: #000;
+      }
+    }
+
+    .select2-container .select2-selection--single {
+      border: 1px solid #3c2c58;
+      background-color: #3c2c58;
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+      color: #7d708e;
+    }
+
+    #toolbar .form-inline .form-group .form-control[name=date_from], .transactions-panel #toolbar .form-inline .form-group .form-control[name=date_to] ,.transactions-panel #toolbar .form-inline .form-group .form-control {
+      background-color: #3c2c58;
+      border: 1px solid #3c2c58;
+      color: #9e92ac;
+    }
+
+    .input-group-addon {
+      background-color: #524070;
+      .date-icon {
+        background-image: url('/images/dark/icons/ic-date-p.png');
+        &:hover {
+          background-image: url('/images/dark/icons/ic-date-a.png');
+        }
+      }
+    }
+
+    .fixed-table-container {
+      border: 0;
+      thead th .th-inner {
+        background-color: #3c2c58;
+      }
+    }
+
+    tbody {
+      background-color: #2e1f46;
+      tr td {
+        border: 1px solid #3c2c58;
+        color: #fff;
+        a {
+          color: #fff;
+        }
+        .icon-button {
+          background-image: url('/images/dark/campaign_icons/ic-t1p.png');
+          &:hover {
+            background-image: url('/images/dark/campaign_icons/ic-t1a.png');
+          }
+        }
+      }
+    }
+
+  }
+   
+   
+  .count {
+    color: #fff;
+  }
+  
+  table.table thead tr th {
+    border: 0;
+    background-color: #3c2c58;
+  }
+
+  
+}
+
+@media(max-width: 945px) {
+  .transactions-panel .flex-wrap {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+  }
+  .input-group {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+  }
+  .input-group-addon {
+    width: 41px;
+  }
+}

@@ -1,0 +1,3148 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "mafia",
+        "contact": {
+            "name": "A2-LAB",
+            "url": "http://a2-lab.com/"
+        },
+        "version": "1"
+    },
+    "host": "mafia.a2-lab.com",
+    "basePath": "/",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {
+        "/api/delete": {
+            "get": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Delete a user",
+                "operationId": "Delete a user",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided"
+                    }
+                }
+            }
+        },
+        "/api/cards/transactions/get": {
+            "get": {
+                "tags": [
+                    "transactions"
+                ],
+                "summary": "Get cards transactions",
+                "operationId": "Get cards transactions",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided",
+                        "schema": {
+                            "$ref": "#/definitions/GetCardsTransaction"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/cards/transactions/user/get": {
+            "get": {
+                "tags": [
+                    "transactions"
+                ],
+                "summary": "Get users cards transactions",
+                "operationId": "Get partners",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/UserCardTransaction"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/cards/transactions/user/buy": {
+            "get": {
+                "tags": [
+                    "transactions"
+                ],
+                "summary": "Buy card transaction",
+                "operationId": "Buy card transaction",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "id of card transaction",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "description": "amount",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided"
+                    },
+                    "413": {
+                        "description": "This card transaction isn't found"
+                    },
+                    "414": {
+                        "description": "Money on balance aren't enough"
+                    }
+                }
+            }
+        },
+        "/api/cards/transactions/user/use": {
+            "get": {
+                "tags": [
+                    "transactions"
+                ],
+                "summary": "Use card transaction",
+                "operationId": "Use card transaction",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "ud of pivot card transaction",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "data",
+                        "in": "query",
+                        "description": "data",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided"
+                    },
+                    "415": {
+                        "description": "This card transaction isn't found"
+                    },
+                    "417": {
+                        "description": "Validation error"
+                    }
+                }
+            }
+        },
+        "/api/cards/transactions/bonus": {
+            "get": {
+                "tags": [
+                    "transactions"
+                ],
+                "summary": "Get transaction card progress bar for user",
+                "operationId": "Get transaction card progress bar for user",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided",
+                        "schema": {
+                            "$ref": "#/definitions/CardTransactionProgressBar"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/balance/": {
+            "get": {
+                "tags": [
+                    "balance"
+                ],
+                "summary": "Get profile balance",
+                "operationId": "balance",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, balance value provided.",
+                        "schema": {
+                            "type": "intefer",
+                            "example": 1234.990000000000009094947017729282379150390625
+                        }
+                    },
+                    "401": {
+                        "description": "Wrong token."
+                    }
+                }
+            }
+        },
+        "/api/v1/balance/details": {
+            "get": {
+                "tags": [
+                    "balance"
+                ],
+                "summary": "Get details profile balance.",
+                "operationId": "balance",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, balance value provided.",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/BalanceDetails"
+                        }
+                    },
+                    "401": {
+                        "description": "Wrong token."
+                    }
+                }
+            }
+        },
+        "/api/v1/balance/referral": {
+            "get": {
+                "tags": [
+                    "balance"
+                ],
+                "summary": "Get referal profile balance.",
+                "operationId": "balance",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, balance value provided.",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/ReferralBalance"
+                        }
+                    },
+                    "401": {
+                        "description": "Wrong token."
+                    }
+                }
+            }
+        },
+        "/api/v1/balance/methods": {
+            "get": {
+                "tags": [
+                    "balance"
+                ],
+                "summary": "get information about paymant methods",
+                "operationId": "paymantSystems",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, balance value provided.",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/PaymentSystems"
+                        }
+                    },
+                    "401": {
+                        "description": "Wrong token."
+                    }
+                }
+            }
+        },
+        "/api/v1/balance/inventory": {
+            "get": {
+                "tags": [
+                    "balance"
+                ],
+                "summary": "get information about paymant cards in user inventoy.",
+                "operationId": "userPaymentInventory",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, balance value provided.",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/InventoryItem"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Wrong token."
+                    }
+                }
+            }
+        },
+        "/api/v1/balance/buy": {
+            "post": {
+                "tags": [
+                    "balance"
+                ],
+                "summary": "Endpoint for buy payment card.",
+                "operationId": "buyPaymentCard",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "",
+                        "in": "body",
+                        "description": "data",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/BayRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, balance value provided."
+                    },
+                    "401": {
+                        "description": "Wrong token."
+                    },
+                    "412": {
+                        "description": "Balance less of nominal."
+                    }
+                }
+            }
+        },
+        "/api/v1/balance/use": {
+            "post": {
+                "tags": [
+                    "balance"
+                ],
+                "summary": "Endpoint for use payment card.",
+                "operationId": "usePaymentCard",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "",
+                        "in": "body",
+                        "description": "data",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/UseRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, balance value provided."
+                    },
+                    "401": {
+                        "description": "Wrong token."
+                    },
+                    "415": {
+                        "description": "Card was used."
+                    },
+                    "417": {
+                        "description": "Data format is wrong."
+                    }
+                }
+            }
+        },
+        "/api/v1/fyber/reward": {
+            "get": {
+                "tags": [
+                    "fyber"
+                ],
+                "summary": "Server callback for fiber to add reward for user.",
+                "operationId": "fiberReward",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "uid",
+                        "in": "query",
+                        "description": "The ID of the user to be credited.",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "sid",
+                        "in": "query",
+                        "description": "The request signature, which you should verify to ensure the request's authenticity.The sid is computed as a SHA1 hash of the request parameters: id = sha1(security_token + user_id + amount + _trans_id_ + pub0 + pub1 + pub2 + \u2026)",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "description": "The amount of virtual currency the user should be credited.",
+                        "required": true,
+                        "type": "number",
+                        "format": "float"
+                    },
+                    {
+                        "name": "currency_name",
+                        "in": "query",
+                        "description": "The name of the virtual currency being rewarded as it appears in the Fyber dashboard.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "currency_id",
+                        "in": "query",
+                        "description": "The id of the virtual currency being rewarded as it appears in the Fyber dashboard.",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "_trans_id_",
+                        "in": "query",
+                        "description": "The unique transaction ID in the form of a UUID (\u201cUniversally Unique Identifier\u201d). Use this to check whether the transaction has already been processed in your system.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "pub0",
+                        "in": "query",
+                        "description": "Its custom parameter that contain user email. This email need for callback logic.",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Server calback was successfull. Responce data containe mesage about status for transaction.",
+                        "schema": {
+                            "type": "string",
+                            "example": "Callback Successful."
+                        }
+                    },
+                    "500": {
+                        "description": "Server error."
+                    }
+                }
+            }
+        },
+        "/api/v1/offertoro/reward": {
+            "get": {
+                "tags": [
+                    "OfferToro"
+                ],
+                "summary": "Server callback for fiber to add reward for user.",
+                "operationId": "offertoroReward",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "The ID of the conversion in OfferToro system.",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "oid",
+                        "in": "query",
+                        "description": "The ID of the offer converted in our system",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "description": "The amount that your user should receive for this conversion nominated in your currency.",
+                        "required": true,
+                        "type": "number",
+                        "format": "float"
+                    },
+                    {
+                        "name": "currency_name",
+                        "in": "query",
+                        "description": "The currency name in OfferToro App's Placement page.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": "The id of your user, the one you have placed in the iframe integration.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "payout",
+                        "in": "query",
+                        "description": "The publisher's revenue for this conversion.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "o_name",
+                        "in": "query",
+                        "description": "The name of the offer converted.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "sig",
+                        "in": "query",
+                        "description": "A signature to be sure the postback is legit.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "package_id",
+                        "in": "query",
+                        "description": "The package id for the android / iTunes app.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ip_address",
+                        "in": "query",
+                        "description": "IP Address of the user when the click happened.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Server calback was successfull. Responce data containe mesage about status for transaction.",
+                        "schema": {
+                            "type": "string",
+                            "example": 1
+                        }
+                    },
+                    "500": {
+                        "description": "Server error."
+                    }
+                }
+            }
+        },
+        "/api/v1/profile": {
+            "get": {
+                "tags": [
+                    "profiles"
+                ],
+                "summary": "Get profile data.",
+                "operationId": "profile",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, profile data provided.",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/ProfileResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Wrong token."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "profiles"
+                ],
+                "summary": "Get profile data.",
+                "operationId": "profile",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token for authentificathion",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "username",
+                        "in": "body",
+                        "description": "username",
+                        "schema": {
+                            "type": "string",
+                            "example": "Jon"
+                        }
+                    },
+                    {
+                        "name": "phone",
+                        "in": "body",
+                        "description": "user Phone number.",
+                        "schema": {
+                            "type": "string",
+                            "example": "+380969999999"
+                        }
+                    },
+                    {
+                        "name": "gender",
+                        "in": "body",
+                        "description": "can be 'male' or 'female'",
+                        "schema": {
+                            "type": "string",
+                            "example": "female"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, profile data provided."
+                    },
+                    "401": {
+                        "description": "Wrong token."
+                    },
+                    "422": {
+                        "description": "Wrong data format."
+                    }
+                }
+            }
+        },
+        "/api/v1/safe/progress": {
+            "get": {
+                "tags": [
+                    "safe"
+                ],
+                "summary": "Get safe progress",
+                "operationId": "safeProgress",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, balance value provided.",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/SafeProgress"
+                        }
+                    },
+                    "401": {
+                        "description": "Wrong token."
+                    }
+                }
+            }
+        },
+        "/api/v1/safe/checkpoint": {
+            "get": {
+                "tags": [
+                    "safe"
+                ],
+                "summary": "Get safe checkpoint",
+                "operationId": "safeCheckpoint",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "id",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, balance value provided.",
+                        "schema": {
+                            "type": "integer",
+                            "example": 1234.990000000000009094947017729282379150390625
+                        }
+                    },
+                    "401": {
+                        "description": "Wrong token."
+                    },
+                    "467": {
+                        "description": "Safe already has been passed"
+                    }
+                }
+            }
+        },
+        "/api/v1/user/countries": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Return country list",
+                "operationId": "getCountires",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Email",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided",
+                        "schema": {
+                            "required": [
+                                "token",
+                                "promo_code_first",
+                                "promo_code_second",
+                                "countries"
+                            ],
+                            "properties": {
+                                "token": {
+                                    "type": "string"
+                                },
+                                "first_promo_code": {
+                                    "type": "string"
+                                },
+                                "second_promo_code": {
+                                    "type": "string"
+                                },
+                                "countries": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Country"
+                                    }
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/user/code-activate": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "activate promo code",
+                "operationId": "activateCode",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "promo_code",
+                        "in": "body",
+                        "description": "promo code that was given another user.",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "REOUQXkNLcwo2zgB"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided"
+                    },
+                    "404": {
+                        "description": "promo code not found."
+                    }
+                }
+            }
+        },
+        "/api/v1/user/login": {
+            "post": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Authenticate user.",
+                "operationId": "login",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "body",
+                        "description": "email",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "newtestemail@gmail.com"
+                        }
+                    },
+                    {
+                        "name": "username",
+                        "in": "body",
+                        "description": "username",
+                        "schema": {
+                            "type": "string",
+                            "example": "Jon"
+                        }
+                    },
+                    {
+                        "name": "country_id",
+                        "in": "body",
+                        "description": "Country id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 220
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, profile data provided.",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/UserResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Wrong token."
+                    },
+                    "422": {
+                        "description": "Wrong data format."
+                    }
+                }
+            }
+        },
+        "/api/v1/games/get": {
+            "get": {
+                "tags": [
+                    "games"
+                ],
+                "summary": "Get games",
+                "operationId": "Get games",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Game"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/games/update": {
+            "get": {
+                "tags": [
+                    "games"
+                ],
+                "summary": "Update the game",
+                "operationId": "Update the game",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "id of game",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "score",
+                        "in": "query",
+                        "description": "score",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided"
+                    },
+                    "437": {
+                        "description": "This game isn't available now"
+                    }
+                }
+            }
+        },
+        "/api/ip/get": {
+            "get": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Get the ip",
+                "operationId": "Get the ip",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/update": {
+            "get": {
+                "tags": [
+                    "partners"
+                ],
+                "summary": "Update the partner",
+                "operationId": "Update the partner",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "id of partner",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "description": "amount",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided"
+                    }
+                }
+            }
+        },
+        "/api/v1/partners/": {
+            "get": {
+                "tags": [
+                    "tasks"
+                ],
+                "summary": "Get partners",
+                "operationId": "Get partners",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Partner"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/quizzes/get": {
+            "get": {
+                "tags": [
+                    "quizzes"
+                ],
+                "summary": "Get quizzes",
+                "operationId": "Get quizzes",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Quiz"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/quizzes/questions/get": {
+            "get": {
+                "tags": [
+                    "quizzes"
+                ],
+                "summary": "Get quiz questions",
+                "operationId": "Get quiz questions",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "id of quiz",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided",
+                        "schema": {
+                            "$ref": "#/definitions/Questions"
+                        }
+                    },
+                    "435": {
+                        "description": "This quiz isn't available now"
+                    }
+                }
+            }
+        },
+        "/api/v1/quizzes/update": {
+            "get": {
+                "tags": [
+                    "quizzes"
+                ],
+                "summary": "Update the quiz",
+                "operationId": "Update the quiz",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "quiz_id of any question",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "score",
+                        "in": "query",
+                        "description": "amount of correct answers",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided"
+                    },
+                    "435": {
+                        "description": "This quiz isn't available now"
+                    }
+                }
+            }
+        },
+        "/api/v1/tasks/new": {
+            "get": {
+                "tags": [
+                    "tasks"
+                ],
+                "summary": "Get new tasks",
+                "operationId": "Get new tasks",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit of task",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "offset",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, tasks array provided",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Task"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/tasks/check": {
+            "get": {
+                "tags": [
+                    "tasks"
+                ],
+                "summary": "Mark task as checked",
+                "operationId": "Mark task as checked",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "task_id",
+                        "in": "query",
+                        "description": "id of task",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided"
+                    }
+                }
+            }
+        },
+        "/api/v1/tasks/install": {
+            "get": {
+                "tags": [
+                    "tasks"
+                ],
+                "summary": "Mark task as installed",
+                "operationId": "Mark task as installed",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "task_id",
+                        "in": "query",
+                        "description": "id of task",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided"
+                    }
+                }
+            }
+        },
+        "/api/v1/tasks/update": {
+            "get": {
+                "tags": [
+                    "tasks"
+                ],
+                "summary": "Update the task",
+                "operationId": "Update the task",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "task_id",
+                        "in": "query",
+                        "description": "id of task",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided",
+                        "schema": {
+                            "$ref": "#/definitions/Users_Task"
+                        }
+                    },
+                    "401": {
+                        "description": "Task already has been done"
+                    },
+                    "410": {
+                        "description": "Task is not available"
+                    }
+                }
+            }
+        },
+        "/api/v1/tasks/get": {
+            "get": {
+                "tags": [
+                    "tasks"
+                ],
+                "summary": "Get user's tasks",
+                "operationId": "Get user's tasks",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, tasks array provided",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Users_Task"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/tasks/history": {
+            "get": {
+                "tags": [
+                    "tasks"
+                ],
+                "summary": "Get user's task history",
+                "operationId": "Get user's task history",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "offset",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, tasks array provided",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/HistoryTask"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/links/award": {
+            "get": {
+                "tags": [
+                    "tasks"
+                ],
+                "summary": "Get award for link",
+                "operationId": "Get award for link",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "link_id",
+                        "in": "query",
+                        "description": "link_id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, tasks array provided"
+                    },
+                    "489": {
+                        "description": "Award has been got already"
+                    }
+                }
+            }
+        },
+        "/api/v1/tasks/review": {
+            "post": {
+                "tags": [
+                    "tasks"
+                ],
+                "summary": "Send task's review",
+                "operationId": "Send task's review",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "task_id",
+                        "in": "query",
+                        "description": "id of task",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "screen",
+                        "in": "formData",
+                        "description": "screen",
+                        "required": true,
+                        "type": "file"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided"
+                    },
+                    "476": {
+                        "description": "Review already exists"
+                    }
+                }
+            }
+        },
+        "/api/cards/get": {
+            "get": {
+                "tags": [
+                    "cards"
+                ],
+                "summary": "Get user's bonus cards",
+                "operationId": "Get user's bonus cards",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/BonusCard"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/user/fcm": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Update the user's fcm token",
+                "operationId": "Update the user's fcm token",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "fcm_token",
+                        "in": "query",
+                        "description": "fcm_token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided"
+                    }
+                }
+            }
+        },
+        "/api/users/level/get": {
+            "get": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Get user's level",
+                "operationId": "Get user's level",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided",
+                        "schema": {
+                            "required": [
+                                "info",
+                                "rate_award"
+                            ],
+                            "properties": {
+                                "info": {
+                                    "$ref": "#/definitions/UserLevel"
+                                },
+                                "rate_award": {
+                                    "$ref": "#/definitions/RateAward"
+                                },
+                                "max_rate_award": {
+                                    "$ref": "#/definitions/RateAward"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/videos/update": {
+            "get": {
+                "tags": [
+                    "videos"
+                ],
+                "summary": "Update the video",
+                "operationId": "Update the video",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "id of video",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided"
+                    },
+                    "410": {
+                        "description": "Video is not available"
+                    }
+                }
+            }
+        },
+        "/api/v1/videos": {
+            "get": {
+                "tags": [
+                    "videos"
+                ],
+                "summary": "Get videos",
+                "operationId": "Get videos",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "description": "token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation, api status provided",
+                        "schema": {
+                            "$ref": "#/definitions/VideoZone"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "User": {
+            "required": [
+                "id",
+                "name",
+                "email",
+                "tel_number",
+                "age",
+                "gender",
+                "balance",
+                "promo_code_first",
+                "promo_code_second"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "tel_number": {
+                    "type": "string"
+                },
+                "age": {
+                    "type": "integer"
+                },
+                "gender": {
+                    "type": "string"
+                },
+                "balance": {
+                    "type": "number"
+                },
+                "promo_code_first": {
+                    "type": "string"
+                },
+                "promo_code_second": {
+                    "type": "string"
+                }
+            }
+        },
+        "Task": {
+            "required": [
+                "id",
+                "package_name",
+                "title",
+                "image_url",
+                "description",
+                "tracking_link",
+                "duration",
+                "award",
+                "daily_award",
+                "type",
+                "days",
+                "time",
+                "keywords",
+                "rate_type",
+                "rate_keywords"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "package_name": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "image_url": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "tracking_link": {
+                    "type": "string"
+                },
+                "duration": {
+                    "type": "integer"
+                },
+                "award": {
+                    "type": "number"
+                },
+                "daily_award": {
+                    "type": "number"
+                },
+                "type": {
+                    "type": "integer"
+                },
+                "days": {
+                    "type": "integer"
+                },
+                "time": {
+                    "type": "integer"
+                },
+                "keywords": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "rate_type": {
+                    "type": "integer"
+                },
+                "rate_keywords": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "HistoryTask": {
+            "required": [
+                "id",
+                "title",
+                "image_url",
+                "pivot"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "image_url": {
+                    "type": "string"
+                },
+                "pivot": {
+                    "$ref": "#/definitions/Pivot_h_t"
+                }
+            }
+        },
+        "Pivot_h_t": {
+            "required": [
+                "date",
+                "earned"
+            ],
+            "properties": {
+                "date": {
+                    "type": "string"
+                },
+                "earned": {
+                    "type": "number"
+                }
+            }
+        },
+        "Token": {
+            "required": [
+                "token",
+                "promo_code_first",
+                "promo_code_second",
+                "is_new"
+            ],
+            "properties": {
+                "token": {
+                    "type": "string"
+                },
+                "promo_code_first": {
+                    "type": "string"
+                },
+                "promo_code_second": {
+                    "type": "string"
+                }
+            }
+        },
+        "Balance": {
+            "required": [
+                "referral_balance",
+                "balance",
+                "during",
+                "paid"
+            ],
+            "properties": {
+                "referral_balance": {
+                    "type": "number"
+                },
+                "balance": {
+                    "type": "number"
+                },
+                "during": {
+                    "type": "number"
+                },
+                "paid": {
+                    "type": "number"
+                }
+            }
+        },
+        "Link": {
+            "required": [
+                "text",
+                "link",
+                "award"
+            ],
+            "properties": {
+                "text": {
+                    "type": "string"
+                },
+                "link": {
+                    "type": "string"
+                },
+                "award": {
+                    "type": "number"
+                }
+            }
+        },
+        "Tasks for Top": {
+            "required": [
+                "tasks",
+                "links",
+                "referral",
+                "videos",
+                "partners",
+                "balance",
+                "entertainment"
+            ],
+            "properties": {
+                "tasks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Task"
+                    }
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Link"
+                    }
+                },
+                "referral": {
+                    "$ref": "#/definitions/Referral"
+                },
+                "videos": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Video"
+                    }
+                },
+                "partners": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Partner"
+                    }
+                },
+                "balance": {
+                    "$ref": "#/definitions/BalanceTop"
+                },
+                "entertainment": {
+                    "$ref": "#/definitions/EntertainmentTop"
+                }
+            }
+        },
+        "VideoZone": {
+            "required": [
+                "video_limit",
+                "videos"
+            ],
+            "properties": {
+                "video_limit": {
+                    "$ref": "#/definitions/VideoLimit"
+                },
+                "videos": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Video"
+                    }
+                }
+            }
+        },
+        "Users_Marathon": {
+            "required": [
+                "id",
+                "title",
+                "all_days",
+                "current_day",
+                "award",
+                "pivot"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "all_days": {
+                    "type": "integer"
+                },
+                "current_day": {
+                    "type": "integer"
+                },
+                "award": {
+                    "type": "number"
+                },
+                "pivot": {
+                    "$ref": "#/definitions/Pivot_m"
+                }
+            }
+        },
+        "Pivot_m": {
+            "required": [
+                "times",
+                "failed",
+                "is_available"
+            ],
+            "properties": {
+                "times": {
+                    "type": "integer"
+                },
+                "is_available": {
+                    "type": "boolean"
+                },
+                "failed": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "Marathon": {
+            "required": [
+                "id",
+                "title",
+                "all_days",
+                "current_day",
+                "award"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "all_days": {
+                    "type": "integer"
+                },
+                "current_day": {
+                    "type": "integer"
+                },
+                "award": {
+                    "type": "number"
+                }
+            }
+        },
+        "Users_Task": {
+            "required": [
+                "id",
+                "package_name",
+                "title",
+                "image_url",
+                "description",
+                "duration",
+                "award",
+                "daily_award",
+                "type",
+                "days",
+                "time_delay",
+                "keywords",
+                "pivot_t"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "package_name": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "image_url": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "duration": {
+                    "type": "integer"
+                },
+                "award": {
+                    "type": "number"
+                },
+                "daily_award": {
+                    "type": "number"
+                },
+                "type": {
+                    "type": "integer"
+                },
+                "days": {
+                    "type": "integer"
+                },
+                "time_delay": {
+                    "type": "integer"
+                },
+                "keywords": {
+                    "type": "string"
+                },
+                "available_time": {
+                    "description": "time when task can be run again",
+                    "type": "string",
+                    "example": "2019-01-09 12:09:29"
+                },
+                "pivot": {
+                    "$ref": "#/definitions/Pivot_t"
+                }
+            }
+        },
+        "Pivot_t": {
+            "required": [
+                "times",
+                "failed_times",
+                "is_available",
+                "is_rating_available"
+            ],
+            "properties": {
+                "times": {
+                    "type": "integer"
+                },
+                "failed_times": {
+                    "type": "integer"
+                },
+                "is_available": {
+                    "type": "boolean"
+                },
+                "is_rating_available": {
+                    "type": "integer"
+                },
+                "cards": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "progress_bar": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        "UserLevel": {
+            "required": [
+                "level",
+                "stars",
+                "task",
+                "video",
+                "partner",
+                "referral"
+            ],
+            "properties": {
+                "level": {
+                    "type": "integer"
+                },
+                "stars": {
+                    "type": "integer"
+                },
+                "task": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "video": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "partner": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "referral": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        "RateAward": {
+            "required": [
+                "task",
+                "video",
+                "partner",
+                "referral"
+            ],
+            "properties": {
+                "task": {
+                    "type": "number"
+                },
+                "video": {
+                    "type": "number"
+                },
+                "partner": {
+                    "type": "number"
+                },
+                "referral": {
+                    "type": "integer"
+                }
+            }
+        },
+        "BonusCard": {
+            "required": [
+                "id",
+                "type",
+                "bonus",
+                "stars",
+                "special"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "type": {
+                    "type": "integer"
+                },
+                "bonus": {
+                    "type": "number"
+                },
+                "stars": {
+                    "type": "integer"
+                },
+                "special": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        "Video": {
+            "description": ". Where id 1 = admob, 2 = fyber",
+            "required": [
+                "id",
+                "title",
+                "limit",
+                "award",
+                "limit",
+                "image_url",
+                "pivot_v"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "limit": {
+                    "type": "integer"
+                },
+                "award": {
+                    "type": "number"
+                },
+                "image_url": {
+                    "type": "string",
+                    "example": "http://localhost:8080/images/videos/fyber-logo.png"
+                },
+                "pivot": {
+                    "$ref": "#/definitions/Pivot_v"
+                }
+            }
+        },
+        "Pivot_v": {
+            "required": [
+                "views",
+                "today_views",
+                "earned",
+                "is_available"
+            ],
+            "properties": {
+                "views": {
+                    "type": "integer"
+                },
+                "today_views": {
+                    "type": "integer"
+                },
+                "earned": {
+                    "type": "number"
+                },
+                "is_available": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "VideoLimit": {
+            "required": [
+                "limit",
+                "today_viewed"
+            ],
+            "properties": {
+                "limit": {
+                    "type": "integer"
+                },
+                "today_viewed": {
+                    "type": "integer"
+                }
+            }
+        },
+        "Partner": {
+            "required": [
+                "id",
+                "title",
+                "description",
+                "award",
+                "pivot"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "award": {
+                    "type": "number"
+                },
+                "image_url": {
+                    "type": "string"
+                }
+            }
+        },
+        "Pivot_p": {
+            "required": [
+                "times",
+                "earned"
+            ],
+            "properties": {
+                "times": {
+                    "type": "integer"
+                },
+                "earned": {
+                    "type": "number"
+                }
+            }
+        },
+        "Referral": {
+            "required": [
+                "description"
+            ],
+            "properties": {
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+        "BalanceTop": {
+            "required": [
+                "description"
+            ],
+            "properties": {
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+        "EntertainmentTop": {
+            "required": [
+                "description"
+            ],
+            "properties": {
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+        "Country": {
+            "required": [
+                "id",
+                "country_name_ru",
+                "country_name_en"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "country_name_ru": {
+                    "type": "string"
+                },
+                "country_name_en": {
+                    "type": "string"
+                }
+            }
+        },
+        "ReferralInfo": {
+            "required": [
+                "referrals",
+                "balance",
+                "award",
+                "paid"
+            ],
+            "properties": {
+                "referrals": {
+                    "type": "integer"
+                },
+                "balance": {
+                    "type": "number"
+                },
+                "award": {
+                    "type": "integer"
+                },
+                "paid": {
+                    "type": "number"
+                }
+            }
+        },
+        "ReferralHistory": {
+            "required": [
+                "paid",
+                "email",
+                "date"
+            ],
+            "properties": {
+                "paid": {
+                    "type": "integer"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string"
+                }
+            }
+        },
+        "TransactionHistory": {
+            "required": [
+                "method",
+                "amount_clean",
+                "state",
+                "date"
+            ],
+            "properties": {
+                "method": {
+                    "type": "string"
+                },
+                "amount_clean": {
+                    "type": "number"
+                },
+                "state": {
+                    "type": "integer"
+                },
+                "date": {
+                    "type": "string"
+                }
+            }
+        },
+        "GetCardsTransaction": {
+            "required": [
+                "rate",
+                "top",
+                "cards"
+            ],
+            "properties": {
+                "rate": {
+                    "type": "number"
+                },
+                "top": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CardTransaction"
+                    }
+                },
+                "cards": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CardTransaction"
+                    }
+                }
+            }
+        },
+        "CardTransaction": {
+            "required": [
+                "id",
+                "title"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                }
+            }
+        },
+        "UserCardTransaction": {
+            "required": [
+                "id",
+                "title",
+                "pivot"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "pivot": {
+                    "$ref": "#/definitions/Pivot_c_t"
+                }
+            }
+        },
+        "Pivot_c_t": {
+            "required": [
+                "ud",
+                "amount"
+            ],
+            "properties": {
+                "ud": {
+                    "type": "integer"
+                },
+                "amount": {
+                    "type": "number"
+                }
+            }
+        },
+        "Quiz": {
+            "required": [
+                "id",
+                "title",
+                "pivot"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "pivot": {
+                    "$ref": "#/definitions/Pivot_q"
+                }
+            }
+        },
+        "Pivot_q": {
+            "required": [
+                "today_times",
+                "limit",
+                "times",
+                "earned",
+                "is_available"
+            ],
+            "properties": {
+                "today_views": {
+                    "type": "integer"
+                },
+                "limit": {
+                    "type": "integer"
+                },
+                "times": {
+                    "type": "integer"
+                },
+                "earned": {
+                    "type": "number"
+                },
+                "is_available": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "QuizQuestion": {
+            "required": [
+                "id",
+                "question",
+                "A",
+                "B",
+                "C",
+                "D",
+                "correct_answer"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "question": {
+                    "type": "string"
+                },
+                "A": {
+                    "type": "string"
+                },
+                "B": {
+                    "type": "string"
+                },
+                "C": {
+                    "type": "string"
+                },
+                "D": {
+                    "type": "string"
+                },
+                "correct_answer": {
+                    "type": "string"
+                }
+            }
+        },
+        "Game": {
+            "required": [
+                "id",
+                "title",
+                "pivot"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "pivot": {
+                    "$ref": "#/definitions/Pivot_g"
+                }
+            }
+        },
+        "Pivot_g": {
+            "required": [
+                "today_times",
+                "limit",
+                "times",
+                "earned",
+                "best_score",
+                "is_available"
+            ],
+            "properties": {
+                "today_views": {
+                    "type": "integer"
+                },
+                "limit": {
+                    "type": "integer"
+                },
+                "times": {
+                    "type": "integer"
+                },
+                "earned": {
+                    "type": "number"
+                },
+                "best_score": {
+                    "type": "integer"
+                },
+                "is_available": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "Questions": {
+            "required": [
+                "quiz_id",
+                "questions"
+            ],
+            "properties": {
+                "quiz_id": {
+                    "type": "integer"
+                },
+                "questions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/QuizQuestion"
+                    }
+                }
+            }
+        },
+        "CardTransactionProgressBar": {
+            "required": [
+                "goal",
+                "progress"
+            ],
+            "properties": {
+                "goal": {
+                    "type": "integer"
+                },
+                "progress": {
+                    "type": "integer"
+                }
+            }
+        },
+        "UseRequest": {
+            "properties": {
+                "ud": {
+                    "type": "int",
+                    "example": 1
+                },
+                "data": {
+                    "type": "string",
+                    "example": "+380966666666"
+                }
+            }
+        },
+        "BayRequest": {
+            "properties": {
+                "amount": {
+                    "type": "number",
+                    "format": "float",
+                    "example": 1000
+                },
+                "method_id": {
+                    "type": "integer",
+                    "example": 1
+                }
+            }
+        },
+        "PaymentSystems": {
+            "properties": {
+                "methods": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PaymentSystem"
+                    }
+                },
+                "nominals": {
+                    "type": "array",
+                    "items": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 1000
+                    }
+                },
+                "rate": {
+                    "type": "float",
+                    "example": 1
+                }
+            }
+        },
+        "PaymentSystem": {
+            "properties": {
+                "id": {
+                    "type": "int",
+                    "example": 1
+                },
+                "title": {
+                    "type": "string",
+                    "example": "WebMoney"
+                }
+            }
+        },
+        "InventoryItem": {
+            "properties": {
+                "ud": {
+                    "type": "int",
+                    "example": 1
+                },
+                "amount": {
+                    "type": "number",
+                    "format": "float",
+                    "example": 1000
+                },
+                "method_name": {
+                    "type": "string",
+                    "example": "WebMoney"
+                },
+                "method_id": {
+                    "type": "integer",
+                    "example": 12
+                }
+            }
+        },
+        "BalanceResponse": {
+            "required": [
+                "balance"
+            ],
+            "properties": {
+                "balance": {
+                    "type": "number"
+                }
+            }
+        },
+        "BalanceDetails": {
+            "properties": {
+                "balance": {
+                    "type": "number",
+                    "format": "float",
+                    "example": 1234.55999999999994543031789362430572509765625
+                },
+                "paid": {
+                    "type": "number",
+                    "format": "float",
+                    "example": 1234.55999999999994543031789362430572509765625
+                }
+            }
+        },
+        "ReferralBalance": {
+            "properties": {
+                "referrals": {
+                    "type": "object",
+                    "$ref": "#/definitions/Referrals"
+                },
+                "balance": {
+                    "type": "number",
+                    "format": "float",
+                    "example": 1234.55999999999994543031789362430572509765625
+                },
+                "award": {
+                    "type": "number",
+                    "format": "float",
+                    "example": 20
+                },
+                "paid": {
+                    "type": "number",
+                    "format": "float",
+                    "example": 1234.55999999999994543031789362430572509765625
+                }
+            }
+        },
+        "Referrals": {
+            "required": [
+                "current",
+                "max",
+                "percent"
+            ],
+            "properties": {
+                "level": {
+                    "type": "integer",
+                    "example": 2
+                },
+                "current": {
+                    "type": "integer",
+                    "example": 2
+                },
+                "max": {
+                    "type": "integer",
+                    "example": 3
+                },
+                "percent": {
+                    "type": "integer",
+                    "example": 60
+                }
+            }
+        },
+        "ProfileResponse": {
+            "required": [
+                "username",
+                "email",
+                "phone",
+                "gender"
+            ],
+            "properties": {
+                "profile": {
+                    "$ref": "#/definitions/Profile"
+                },
+                "progress": {
+                    "$ref": "#/definitions/Progress"
+                }
+            }
+        },
+        "Profile": {
+            "required": [
+                "username",
+                "email",
+                "phone",
+                "gender"
+            ],
+            "properties": {
+                "username": {
+                    "type": "string",
+                    "example": "Jon"
+                },
+                "email": {
+                    "type": "string",
+                    "example": "jon@gmail.com"
+                },
+                "phone": {
+                    "type": "string",
+                    "example": "+380966666666"
+                },
+                "gender": {
+                    "type": "string",
+                    "example": "female"
+                }
+            }
+        },
+        "Progress": {
+            "required": [
+                "profile",
+                "tasks",
+                "videos",
+                "partners",
+                "referals"
+            ],
+            "properties": {
+                "profile": {
+                    "$ref": "#/definitions/ProgressItem"
+                },
+                "tasks": {
+                    "$ref": "#/definitions/ProgressItem"
+                },
+                "videos": {
+                    "$ref": "#/definitions/ProgressItem"
+                },
+                "partners": {
+                    "$ref": "#/definitions/ProgressItem"
+                },
+                "referals": {
+                    "$ref": "#/definitions/ProgressItem"
+                }
+            }
+        },
+        "ProgressItem": {
+            "required": [
+                "level",
+                "current",
+                "max",
+                "percent"
+            ],
+            "properties": {
+                "level": {
+                    "type": "integer",
+                    "example": 1
+                },
+                "current": {
+                    "type": "integer",
+                    "example": 2
+                },
+                "max": {
+                    "type": "integer",
+                    "example": 3
+                },
+                "percent": {
+                    "type": "integer",
+                    "example": 60
+                }
+            }
+        },
+        "SafeProgress": {
+            "required": [
+                "token",
+                "first_promo_code",
+                "second_promo_code"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "example": 1
+                },
+                "title": {
+                    "type": "string",
+                    "example": "some title"
+                },
+                "current": {
+                    "type": "integer",
+                    "example": 2
+                },
+                "max": {
+                    "type": "integer",
+                    "example": 5
+                },
+                "status": {
+                    "description": "can be 0,1 or 2. 1 means you can get award about current day, 0 means you cant get award about current day and 2 means what this marathon done, and new marathon no find.",
+                    "type": "integer",
+                    "example": 1
+                },
+                "award": {
+                    "description": "the number of elements is the same as the value of the max property, first item award for first day second for second dey etc.",
+                    "type": "array",
+                    "items": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 1234.55999999999994543031789362430572509765625
+                    }
+                }
+            }
+        },
+        "UserResponse": {
+            "required": [
+                "token",
+                "first_promo_code",
+                "second_promo_code"
+            ],
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "example": "REOUQXkNLcwo2zgB"
+                },
+                "first_promo_code": {
+                    "type": "string",
+                    "example": "REOUQXkNLcwo2zgB"
+                },
+                "second_promo_code": {
+                    "type": "string",
+                    "example": "REOUQXkNLcwo2zgB"
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "users",
+            "description": "Users"
+        },
+        {
+            "name": "partners",
+            "description": "Partners"
+        },
+        {
+            "name": "cards",
+            "description": "Bonus cards"
+        },
+        {
+            "name": "profiles",
+            "description": "Profile Api"
+        },
+        {
+            "name": "balance",
+            "description": "Blance Api"
+        },
+        {
+            "name": "user",
+            "description": "User Api"
+        },
+        {
+            "name": "safe",
+            "description": "Safe Api"
+        },
+        {
+            "name": "tasks",
+            "description": "Tasks"
+        },
+        {
+            "name": "fyber",
+            "description": "Fyber"
+        },
+        {
+            "name": "videos",
+            "description": "Videos"
+        },
+        {
+            "name": "quizzes",
+            "description": "Quizzes"
+        }
+    ]
+}

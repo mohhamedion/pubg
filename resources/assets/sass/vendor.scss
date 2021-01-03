@@ -1,0 +1,17 @@
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../css/bootstrap-table.min.css";
+@import "../css/bootstrap-datepicker.css";
+@import "../css/bootstrap-datetimepicker.css";
+// Fonts
+@import "~font-awesome-scss/scss/font-awesome";
+@import "partials/fonts";
+@import "font-icons/font-icons";
+// Other
+@import "~normalize.css/normalize.css";
+@import "partials/mixins";
+// Global variables
+@import "variables";
+// Libs
+@import "~noty/src/noty";
+@import "~select2/src/scss/core";
